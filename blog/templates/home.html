@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello world</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+
+{% block content %}
+    <h1>Posts</h1>
+    <ul>
+        {% for post in object_list %}
+            <li><a href="{% url 'post_detail_url' post.pk %}">
+                {{ post.title }}</a> - {{ post.auther }}<br/>
+                {{ post.body }}<br/>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
