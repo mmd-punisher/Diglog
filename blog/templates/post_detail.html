@@ -6,10 +6,10 @@
 
 {% block content %}
 <h1>{{ post.title }}</h1>
-<small>By: {{ post.auther }}</small>
+<small>By: {{ post.author }}</small>
 <hr>
 <p>{{ post.body }}</p>
 <br/>
 <br/>
-<a href="{% url 'home_url' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'home-url' %}" class="btn btn-secondary">Back</a>
 {% endblock %}

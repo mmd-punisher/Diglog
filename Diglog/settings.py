@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# Mohammad
+# 1234M
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

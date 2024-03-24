@@ -5,8 +5,8 @@
     <h1>Posts</h1>
     <ul>
         {% for post in object_list %}
-            <li><a href="{% url 'post_detail_url' post.pk %}">
-                {{ post.title }}</a> - {{ post.auther }}<br/>
+            <li><a href="{% url 'post-detail-url' post.pk %}">
+                {{ post.title }}</a> - {{ post.author }}<br/>
                 {{ post.body }}<br/>
             </li>
         {% endfor %}
