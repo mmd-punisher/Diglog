@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% if user.is_authenticated %}
 {% block title %}
     Delete {{ post.title }}
 {% endblock %}
@@ -21,3 +21,4 @@
     </div>
 
 {% endblock %}
+{% endif %}

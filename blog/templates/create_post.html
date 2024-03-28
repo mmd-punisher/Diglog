@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% if user.is_authenticated %}
 {% block title %}
     Create post
 {% endblock %}
@@ -17,3 +17,4 @@
     </div>
 
 {% endblock %}
+{% endif %}

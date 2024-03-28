@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 
 {% block title %}
-{{ post.title }}
+    {{ post.title }}
 {% endblock %}
 
 {% block content %}
-<h1>{{ post.title }}</h1>
-<small>By: {{ post.author }} - At {{ post.pub_date | date:'d F Y' }}</small>
-<hr>
-<p>{{ post.body }}</p>
-<br/>
-<br/>
-<a href="{% url 'home-url' %}" class="btn btn-secondary">Back</a>
-<a href="{% url 'edit-post-url' post.pk %}" class="btn btn-secondary">Edit</a>
-<a href="{% url 'delete-post-url' post.pk %}" class="btn btn-secondary">Delete</a>
+    <h1>{{ post.title }}</h1>
+    <small>By: {{ post.author }} - At {{ post.pub_date | date:'d F Y' }}</small>
+    <hr>
+    <p>{{ post.body }}</p>
+    <br/>
+    <br/>
+    <a href="{% url 'home-url' %}" class="btn btn-secondary">Back</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'edit-post-url' post.pk %}" class="btn btn-secondary">Edit</a>
+    <a href="{% url 'delete-post-url' post.pk %}" class="btn btn-secondary">Delete</a>
+    {% endif %}
 {% endblock %}
