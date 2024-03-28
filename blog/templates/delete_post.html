@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Editing {{ post.title }}
+    Delete {{ post.title }}
 {% endblock %}
 
+
 {% block content %}
-    <h1>Edit your post</h1>
+    <h1>Delete post: {{ post.title }}</h1>
     <br/>
     <br/>
     <div class="form-group">
         <form method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn btn-info">Save changes</button>
+            <strong>Are you sure you want to delete {{ post.title }} post?!</strong>
+            <br/>
+            <br/>
+            <button class="btn btn-secondary">Delete post</button>
             <a href="{% url 'post-detail-url' post.pk %}" class="btn btn-secondary">Back</a>
-
         </form>
     </div>
 
