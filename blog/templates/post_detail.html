@@ -8,7 +8,7 @@
     <h1>{{ post.title }}</h1>
     <small>By: {{ post.author }} - At {{ post.pub_date | date:'d F Y' }}</small>
     <hr>
-    <p>{{ post.body }}</p>
+    <p>{{ post.body | safe }}</p>
     <br/>
     <br/>
     <a href="{% url 'home-url' %}" class="btn btn-secondary">Back</a>
