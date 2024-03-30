@@ -1,21 +1,26 @@
 {% extends 'base.html' %}
 {% if user.is_authenticated %}
-{% block title %}
-    Create post
-{% endblock %}
+    {% block title %}
+        Create post
+    {% endblock %}
 
-{% block content %}
-    <h1>Create your post</h1>
-    <br/>
-    <br/>
-    <div class="form-group">
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.media }}
-            {{ form.as_p }}
-            <button class="btn btn-info">Post</button>
-        </form>
-    </div>
+    {% block content %}
+        <h1>Create your post</h1>
+        <br/>
+        <br/>
+        <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <button class="btn btn-info">Post</button>
+            </form>
+        </div>
 
-{% endblock %}
+        <script>
+            var name = "{{ user.id }}"
+            document.getElementById("auther_field").value = name;
+        </script>
+
+    {% endblock %}
 {% endif %}
