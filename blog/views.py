@@ -42,6 +42,6 @@ class AddCategoryView(CreateView):
 
 
 def category_list(request, category_name):
-    category_post = Post.objects.filter(category__icontains=category_name).order_by('-pub_date')
-    context = {'category_post': category_post, 'category_name': category_name}
+    category_post = Post.objects.filter(category__icontains=category_name.replace('-', ' ')).order_by('-pub_date')
+    context = {'category_post': category_post, 'category_name': category_name.replace('-', ' ')}
     return render(request, 'categories.html', context)

@@ -14,7 +14,7 @@
             {% csrf_token %}
             {{ form.as_p }}
             <button class="btn btn-info">Save changes</button>
-            <a href="{% url 'post-detail-url' post.pk %}" class="btn btn-secondary">Back</a>
+            <a href="{% url 'post-detail-url' post.slug %}" class="btn btn-secondary">Back</a>
 
         </form>
     </div>
