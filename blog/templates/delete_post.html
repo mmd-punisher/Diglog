@@ -1,24 +1,25 @@
 {% extends 'base.html' %}
 {% if user.is_authenticated %}
-{% block title %}
-    Delete {{ post.title }}
-{% endblock %}
+    {% block title %}
+        Delete {{ post.title }}
+    {% endblock %}
 
+    {% block content %}
+        {% if user.id == post.author.id %}
 
-{% block content %}
-    <h1>Delete post: {{ post.title }}</h1>
-    <br/>
-    <br/>
-    <div class="form-group">
-        <form method="POST">
-            {% csrf_token %}
-            <strong>Are you sure you want to delete {{ post.title }} post?!</strong>
+            <h1>Delete post: {{ post.title }}</h1>
             <br/>
             <br/>
-            <button class="btn btn-secondary">Delete post</button>
-            <a href="{% url 'post-detail-url' post.pk %}" class="btn btn-secondary">Back</a>
-        </form>
-    </div>
-
-{% endblock %}
+            <div class="form-group">
+                <form method="POST">
+                    {% csrf_token %}
+                    <strong>Are you sure you want to delete {{ post.title }} post?!</strong>
+                    <br/>
+                    <br/>
+                    <button class="btn btn-secondary">Delete post</button>
+                    <a href="{% url 'post-detail-url' post.pk %}" class="btn btn-secondary">Back</a>
+                </form>
+            </div>
+        {% endif %}
+    {% endblock %}
 {% endif %}

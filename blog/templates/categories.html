@@ -4,8 +4,8 @@
 {% endblock %}
 <ul>
     {% block content %}
-        <h1>Posts with category: {{ category_name }}</h1>
         {% if category_post %}
+            <h1>Posts with category: {{ category_name }}</h1>
             {% for post in category_post %}
                 <li><a href="{% url 'post-detail-url' post.slug %}">
                     {{ post.title }}</a> - {{ post.author }}<br/>
@@ -13,7 +13,7 @@
                 </li>
             {% endfor %}
         {% else %}
-            <li>There is no post with {{ category_name }} category</li>
+            <h2>There is no post with {{ category_name }} category</h2><br/><br/>
         {% endif %}
         <a href="{% url 'home-url' %}" class="btn btn-secondary">Home</a>
 

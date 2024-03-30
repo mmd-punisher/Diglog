@@ -7,6 +7,9 @@ urlpatterns = [
     path('create/', views.PostCreateView.as_view(), name='create-post-url'),
     path('edit/<int:pk>/', views.PostUpdateView.as_view(), name='edit-post-url'),
     path('post/<int:pk>/delete', views.PostDeleteView.as_view(), name='delete-post-url'),
-    path('add_category', views.AddCategoryView.as_view(), name='add-category-url'),
-    path('category/<str:category_name>/', views.category_list, name='category-list-url')
+    path('add-category', views.AddCategoryView.as_view(), name='add-category-url'),
+    path('category/<str:category_name>/', views.category_list, name='category-list-url'),
+    path('categories/', views.category_menu, name='category-menu-url'),
+    path('accounts/logout/', views.logout_view, name='logout-url'),
+
 ]
