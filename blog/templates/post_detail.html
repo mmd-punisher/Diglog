@@ -17,12 +17,24 @@
             <a href="{% url 'edit-post-url' post.pk %}" class="btn btn-secondary">Edit</a>
             <a href="{% url 'delete-post-url' post.pk %}" class="btn btn-secondary">Delete</a>
         {% endif %}
-        <br/><br/><hr>
+        <br/>
+        <hr>
         <form action="{% url 'like-post-url' post.slug %}" method="post">
             {% csrf_token %}
-            <button type="submit" name="post_like" value="{{ post.slug }}" class="btn btn-outline-danger">
-                Like
-            </button> - {{ total_likes }} likes
+            {% if liked %}
+                <button type="submit" name="post_like" value="{{ post.slug }}" class="btn btn-danger">
+                    UnLike
+                </button>
+            {% else %}
+                <button type="submit" name="post_like" value="{{ post.slug }}" class="btn btn-outline-danger">
+                    Like
+                </button>
+            {% endif %}
+            - {{ total_likes }} likes
         </form>
+    {% else %}
+        <br/>
+        <br/>
+        <small><a href="{% url 'login' %}">Login</a> to like and comment</small>
     {% endif %}
 {% endblock %}

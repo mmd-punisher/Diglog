@@ -19,9 +19,13 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         li = get_object_or_404(Post, slug=self.kwargs['slug'])
-        context = super(PostDetailView, self).get_context_data(**kwargs)
         total_likes = li.total_likes()
+        liked = False
+        if li.likes.filter(id=self.request.user.id).exists():
+            liked = True
+        context = super(PostDetailView, self).get_context_data(**kwargs)
         context["total_likes"] = total_likes
+        context["liked"] = liked
         return context
 
 
@@ -69,5 +73,13 @@ def logout_view(request):
 
 def like_view(request, slug):
     post = get_object_or_404(Post, slug=request.POST.get('post_like'))
-    post.likes.add(request.user)  # Not only we save the like, we also save the user
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)  # Not only we save the like, we also save the user
+        liked = True
+
     return HttpResponseRedirect(reverse('post-detail-url', args=[str(slug)]))
+
