@@ -11,5 +11,6 @@ urlpatterns = [
     path('category/<str:category_name>/', views.category_list, name='category-list-url'),
     path('categories/', views.category_menu, name='category-menu-url'),
     path('accounts/logout/', views.logout_view, name='logout-url'),
+    path('like/<slug:slug>', views.like_view, name='like-post-url'),
 
 ]

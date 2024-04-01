@@ -21,8 +21,12 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = RichTextField()
     pub_date = models.DateTimeField(auto_now_add=True)
-    category = models.CharField(max_length=255, default='Daily', )
+    category = models.CharField(max_length=255, default='Daily')
     slug = models.SlugField(max_length=100, unique=True)
+    likes = models.ManyToManyField(User, related_name='blog_posts')
+
+    def total_likes(self):
+        return self.likes.count()
 
     def __str__(self):
         return self.title + ' | ' + str(self.author)

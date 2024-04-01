@@ -1,6 +1,7 @@
 from django.contrib.auth import logout
-from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from blog.forms import PostForm, EditForm
 from blog.models import Post, Category
@@ -15,6 +16,13 @@ class HomeView(ListView):
 class PostDetailView(DetailView):
     model = Post
     template_name = 'post_detail.html'
+
+    def get_context_data(self, **kwargs):
+        li = get_object_or_404(Post, slug=self.kwargs['slug'])
+        context = super(PostDetailView, self).get_context_data(**kwargs)
+        total_likes = li.total_likes()
+        context["total_likes"] = total_likes
+        return context
 
 
 class PostCreateView(CreateView):
@@ -57,3 +65,9 @@ def category_menu(request):
 def logout_view(request):
     logout(request)
     return redirect('home-url')
+
+
+def like_view(request, slug):
+    post = get_object_or_404(Post, slug=request.POST.get('post_like'))
+    post.likes.add(request.user)  # Not only we save the like, we also save the user
+    return HttpResponseRedirect(reverse('post-detail-url', args=[str(slug)]))
