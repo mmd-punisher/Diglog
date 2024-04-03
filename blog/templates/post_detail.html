@@ -6,7 +6,7 @@
 
 {% block content %}
     <h1>{{ post.title }}</h1>
-    <small>By: {{ post.author }} - At {{ post.pub_date | date:'d F Y' }}</small>
+    <small>By: {{ post.author.first_name }} {{ post.author.last_name }} - At {{ post.pub_date | date:'d F Y' }}</small>
     <hr>
     <p>{{ post.body | safe }}</p>
     <br/>
