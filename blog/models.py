@@ -24,6 +24,7 @@ class Post(models.Model):
     category = models.CharField(max_length=255, default='Daily')
     slug = models.SlugField(max_length=100, unique=True)
     likes = models.ManyToManyField(User, related_name='blog_posts')
+    short_description = models.CharField(max_length=350)
 
     def total_likes(self):
         return self.likes.count()

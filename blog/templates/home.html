@@ -5,8 +5,11 @@
     <ul>
         {% for post in object_list %}
             <li><a href="{% url 'post-detail-url' post.slug %}">
-                {{ post.title }}</a> - {{ post.author }} - (<a href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a>)<br/>
-                {{ post.body | truncatechars:100|safe }}<br/>
+                {{ post.title }}</a> - {{ post.author }} - (<a
+                    href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a>)<br/>
+                {{ post.short_description | truncatechars:100|safe }}<br/>
+{#                {{ post.body | truncatechars:70|safe }}<br/>#}
+
             </li>
         {% endfor %}
     </ul>
