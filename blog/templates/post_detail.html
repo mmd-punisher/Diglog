@@ -8,6 +8,9 @@
     <h1>{{ post.title }}</h1>
     <small>By: {{ post.author.first_name }} {{ post.author.last_name }} - At {{ post.pub_date | date:'d F Y' }}</small>
     <hr>
+    {% if post.header_image %}
+        <img src="{{ post.header_image.url }}">
+    {% endif %}
     <p>{{ post.body | safe }}</p>
     <br/>
     <br/>

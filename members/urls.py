@@ -1,5 +1,5 @@
 from django.urls import path
-from django.contrib.auth import views as auth_views
+# from django.contrib.auth import views as auth_views
 from .views import UserRegisterView, UserEditView, PasswordsChangeView, password_success
 
 
