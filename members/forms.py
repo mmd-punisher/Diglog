@@ -20,18 +20,32 @@ class RegisterForm(UserCreationForm):
 
 
 class EditProfileForm(UserChangeForm):
+    """
+        def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        password = self.fields.get("password")
+        # Little changes here: {self.instance.pk} -> members
+        if password:
+            password.help_text = password.help_text.format(
+                f"../../members/password/"
+            )
+        user_permissions = self.fields.get("user_permissions")
+        if user_permissions:
+            user_permissions.queryset = user_permissions.queryset.select_related(
+                "content_type"
+            )
+    """
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': "form-control"}))
     first_name = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': "form-control"}))
     last_name = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': "form-control"}))
     username = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': "form-control"}))
-    last_login = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': "form-control"}))
-    is_superuser = forms.CharField(max_length=200, widget=forms.CheckboxInput(attrs={'class': "form-check"}))
-    is_staff = forms.CharField(max_length=200, widget=forms.CheckboxInput(attrs={'class': "form-check"}))
-    is_active = forms.CharField(max_length=200, widget=forms.CheckboxInput(attrs={'class': "form-check"}))
-    date_joined = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': "form-control"}))
+    last_login = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': "form-control", 'readonly': 'readonly'}))
+    # is_superuser = forms.CharField(max_length=200, widget=forms.CheckboxInput(attrs={'class': "form-check"}))
+    # is_staff = forms.CharField(max_length=200, widget=forms.CheckboxInput(attrs={'class': "form-check"}))
+    # is_active = forms.CharField(max_length=200, widget=forms.CheckboxInput(attrs={'class': "form-check"}))
+    date_joined = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': "form-control", 'readonly': 'readonly'}))
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'username', 'password',
-                  'last_login', 'is_superuser', 'is_active', 'is_staff',
-                  'date_joined']
+        fields = ['first_name', 'last_name', 'email', 'username',
+                  'last_login', 'date_joined']

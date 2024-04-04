@@ -10,6 +10,13 @@
     <div class="form-group">
         <form method="POST">
             {% csrf_token %}
+{#            <p>First name:<br>{{ form.first_name }}</p>#}
+{#            <p>Last name:<br>{{ form.last_name }}</p>#}
+{#            <p>Username:<br>{{ form.username }}</p>#}
+{#            <p>Email:<br>{{ form.email }}</p>#}
+{#            <p>Last login:<br>{{ form.last_login }}</p>#}
+{#            <p>Date joined:<br>{{ form.date_joined }}</p>#}
+{#            <p>For change yor password, click <a href="{% url 'password-change-view-url' %}">here</a></p>#}
             {{ form.as_p }}
             <button class="btn btn-secondary">Update Profile</button>
         </form>
