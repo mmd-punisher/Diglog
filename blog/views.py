@@ -4,7 +4,7 @@ from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from blog.forms import PostForm, EditForm
-from blog.models import Post, Category
+from blog.models import Post, Category, Profile
 
 
 class HomeView(ListView):
@@ -83,3 +83,6 @@ def like_view(request, slug):
 
     return HttpResponseRedirect(reverse('post-detail-url', args=[str(slug)]))
 
+# def user_profile(request, username):
+#     the_user = Profile.objects.get(username=request.user.username)
+#     return render()

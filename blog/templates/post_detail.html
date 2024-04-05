@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
     {{ post.title }}
 {% endblock %}
@@ -41,10 +41,17 @@
         <small><a href="{% url 'login' %}">Login</a> to like and comment</small>
     {% endif %}
     <br/><br/>
+    <h2>About Author</h2>
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-2">
-                <img src="{{ post.author.profile.profile_pic.url }}" class="img-fluid rounded-start" alt="profile pic">
+                {% if post.author.profile.profile_pic %}
+                    <img src="{{ post.author.profile.profile_pic.url }}" class="img-fluid rounded-start"
+                         alt="profile pic">
+                {% else %}
+                    <img src="{% static 'blog/images/ProfileDefault.jpg' %}" class="img-fluid rounded-start"
+                         alt="profile pic">
+                {% endif %}
             </div>
             <div class="col-md-10">
                 <div class="card-body">
