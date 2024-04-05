@@ -41,5 +41,33 @@
         <small><a href="{% url 'login' %}">Login</a> to like and comment</small>
     {% endif %}
     <br/><br/>
-    <img src="{{ post.author.profile.profile_pic.url }}" width=100 height=100 class="rounded-circle">
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-2">
+                <img src="{{ post.author.profile.profile_pic.url }}" class="img-fluid rounded-start" alt="profile pic">
+            </div>
+            <div class="col-md-10">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.author.first_name }} {{ post.author.last_name }}</h5>
+                    <p class="card-text"><small class="text-body-secondary">
+                        {% if post.author.profile.website_link %}
+                            <a target="_blank" href="{{ post.author.profile.website_link }}">Website</a>
+                        {% endif %}
+
+                        {% if post.author.profile.instagram_link %}
+                            | <a target="_blank" href="{{ post.author.profile.instagram_link }}">Instagram</a>
+                        {% endif %}
+
+                        {% if post.author.profile.twitter_link %}
+                            |<a target="_blank" href="{{ post.author.profile.twitter_link }}">Twitter</a>
+                        {% endif %}
+                    </small>
+                    </p>
+                    <p class="card-text">{{ post.author.profile.bio }}</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {#    <img src="" width=100 height=100 class="rounded-circle">#}
 {% endblock %}
