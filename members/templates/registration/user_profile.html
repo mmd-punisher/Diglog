@@ -1,12 +1,42 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
-
+    {{ the_user.user.first_name }} {{ the_user.user.last_name }}
 {% endblock %}
 
 {% block content %}
-<h1>Uer Profile</h1>
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-2">
+                {% if the_user.profile_pic %}
+                    <img src="{{ the_user.profile_pic.url }}" class="img-fluid rounded-start"
+                         alt="profile pic">
+                {% else %}
+                    <img src="{% static 'blog/images/ProfileDefault.jpg' %}" class="img-fluid rounded-start"
+                         alt="profile pic">
+                {% endif %}
+            </div>
+            <div class="col-md-10">
+                <div class="card-body">
+                    <h5 class="card-title">{{ the_user.user.first_name }} {{ the_user.user.last_name }}</h5>
+                    <p class="card-text"><small class="text-body-secondary">
+                        {% if the_user.website_link %}
+                            <a target="_blank" href="{{ the_user.website_link }}">Website</a>
+                        {% endif %}
 
-{{ profile }}
+                        {% if the_user.instagram_link %}
+                            | <a target="_blank" href="{{the_user.instagram_link }}">Instagram</a>
+                        {% endif %}
+
+                        {% if the_user.twitter_link %}
+                            |<a target="_blank" href="{{ the_user.twitter_link }}">Twitter</a>
+                        {% endif %}
+                    </small>
+                    </p>
+                    <p class="card-text">{{ the_user.bio }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
