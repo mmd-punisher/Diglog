@@ -1,9 +1,10 @@
 from django.contrib.auth.views import PasswordChangeView
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib.auth.forms import PasswordChangeForm
 from django.urls import reverse_lazy
 from .forms import RegisterForm, EditProfileForm, PasswordChangingForm
+from blog.models import Profile
 
 
 class PasswordsChangeView(PasswordChangeView):
@@ -32,3 +33,12 @@ class UserEditView(generic.UpdateView):
         return self.request.user
 
 
+class ShowProfileView(generic.DetailView):
+    model = Profile
+    template_name = 'registration/user_profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ShowProfileView, self).get_context_data(**kwargs)
+        the_user = get_object_or_404(Profile, slug=self.kwargs['slug'])
+        context['profile'] = the_user
+        return context

@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.contrib.auth.models import User
+
 from .models import Post, Category, Profile
 
 
@@ -9,4 +11,5 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category)
+# admin.site.register(Profile, ProfileAdmin)
 admin.site.register(Profile)

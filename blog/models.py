@@ -48,7 +48,12 @@ class Profile(models.Model):
     website_link = models.CharField(max_length=255, null=True, blank=True)
     instagram_link = models.CharField(max_length=255, null=True, blank=True)
     twitter_link = models.CharField(max_length=255, null=True, blank=True)
-
+    slug = models.SlugField(max_length=100, unique=True, blank=True)
 
     def __str__(self):
         return str(self.user)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.user.username)
+        super(Profile, self).save(*args, **kwargs)
+

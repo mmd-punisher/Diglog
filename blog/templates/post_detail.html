@@ -71,7 +71,7 @@
                     </small>
                     </p>
                     <p class="card-text">{{ post.author.profile.bio }}</p>
-
+                    <a href="{% url 'show-profile-url' post.author.profile.slug %}">Profile page</a>
                 </div>
             </div>
         </div>
