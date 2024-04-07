@@ -36,18 +36,26 @@
 
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'edit-profile-url' %}">Edit Setting</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'edit-profile-page-url' user.profile.slug %}">Edit Profile
-                            Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'show-profile-url' user.profile.slug %}">Profile Page</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'add-category-url' %}">Add Category</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'edit-settings-url' %}">Edit Setting</a>
+                    </li>
+                    {% if user.profile.slug %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'edit-profile-page-url' user.profile.slug %}">Edit Profile
+                                Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'show-profile-url' user.profile.slug %}">Profile Page</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'create-profile-page-url' %}">Create Your Profile</a>
+                        </li>
+                    {% endif %}
+
                     <li class="nav-item">
                     </li>
                     <a class="nav-link" href="{% url 'create-post-url' %}">Create Post</a>

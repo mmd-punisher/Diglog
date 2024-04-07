@@ -57,3 +57,6 @@ class Profile(models.Model):
         self.slug = slugify(self.user.username)
         super(Profile, self).save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        # return reverse('show-profile-url', kwargs={"slug": self.slug})
+        return reverse('home-url')

@@ -3,8 +3,8 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib.auth.forms import PasswordChangeForm
 from django.urls import reverse_lazy
-from .forms import RegisterForm, EditProfileForm, PasswordChangingForm
 from blog.models import Profile
+from .forms import RegisterForm, EditProfileForm, PasswordChangingForm, ProfilePageForm
 
 
 class PasswordsChangeView(PasswordChangeView):
@@ -26,7 +26,7 @@ class UserRegisterView(generic.CreateView):
 
 class UserEditView(generic.UpdateView):
     form_class = EditProfileForm
-    template_name = 'registration/edit_profile.html'
+    template_name = 'registration/edit_settings.html'
     success_url = reverse_lazy('home-url')
 
     def get_object(self):
@@ -49,3 +49,13 @@ class EditProfilePageView(generic.UpdateView):
     template_name = 'registration/edit_profile_page.html'
     fields = ['bio', 'profile_pic', 'website_link', 'instagram_link', 'twitter_link']
     success_url = reverse_lazy('home-url')
+
+
+class CreateProfilePageView(generic.CreateView):
+    model = Profile
+    form_class = ProfilePageForm
+    template_name = 'registration/create_profile_page.html'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CreateProfilePageView, self).form_valid(form)
