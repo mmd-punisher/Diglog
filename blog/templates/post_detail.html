@@ -9,7 +9,7 @@
     <small>By: {{ post.author.first_name }} {{ post.author.last_name }} - At {{ post.pub_date | date:'d F Y' }}</small>
     <hr>
     {% if post.header_image %}
-        <img src="{{ post.header_image.url }}">
+        <img src="{{ post.header_image.url }}" alt="Profile Image">
     {% endif %}
     <p>{{ post.body | safe }}</p>
     <br/>
@@ -17,8 +17,8 @@
     <a href="{% url 'home-url' %}" class="btn btn-secondary">Back</a>
     {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
-            <a href="{% url 'edit-post-url' post.pk %}" class="btn btn-secondary">Edit</a>
-            <a href="{% url 'delete-post-url' post.pk %}" class="btn btn-secondary">Delete</a>
+            <a href="{% url 'edit-post-url' post.slug %}" class="btn btn-secondary">Edit</a>
+            <a href="{% url 'delete-post-url' post.slug %}" class="btn btn-secondary">Delete</a>
         {% endif %}
         <br/>
         <hr>
@@ -49,7 +49,7 @@
                     <img src="{{ post.author.profile.profile_pic.url }}" class="img-fluid rounded-start"
                          alt="profile pic">
                 {% else %}
-                    <img src="{% static 'blog/images/ProfileDefault.jpg' %}" class="img-fluid rounded-start"
+                    <img src="{% static 'blog/images/ProfileDefault.webp' %}" class="img-fluid rounded-start"
                          alt="profile pic">
                 {% endif %}
             </div>

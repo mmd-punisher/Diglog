@@ -42,3 +42,10 @@ class ShowProfileView(generic.DetailView):
         the_user = get_object_or_404(Profile, slug=self.kwargs['slug'])
         context['the_user'] = the_user
         return context
+
+
+class EditProfilePageView(generic.UpdateView):
+    model = Profile
+    template_name = 'registration/edit_profile_page.html'
+    fields = ['bio', 'profile_pic', 'website_link', 'instagram_link', 'twitter_link']
+    success_url = reverse_lazy('home-url')

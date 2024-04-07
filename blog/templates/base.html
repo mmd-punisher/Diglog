@@ -19,6 +19,7 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home-url' %}">Diglog</a>
@@ -35,7 +36,14 @@
 
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'edit-profile-url' %}">Edit Profile</a>
+                        <a class="nav-link" href="{% url 'edit-profile-url' %}">Edit Setting</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'edit-profile-page-url' user.profile.slug %}">Edit Profile
+                            Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'show-profile-url' user.profile.slug %}">Profile Page</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'add-category-url' %}">Add Category</a>
@@ -46,6 +54,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout-url' %}">Logout</a>
                     </li>
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+
                 {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'register-url' %}">Register</a>
@@ -80,6 +90,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+
 <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
 <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
 </body>

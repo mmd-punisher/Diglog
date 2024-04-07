@@ -2,20 +2,20 @@
 {% block title %}
     {{ category_name }} posts
 {% endblock %}
-<ul>
-    {% block content %}
-        {% if category_post %}
-            <h1>Posts with category: {{ category_name }}</h1>
-            {% for post in category_post %}
-                <li><a href="{% url 'post-detail-url' post.slug %}">
-                    {{ post.title }}</a> - {{ post.author }}<br/>
-                    {{ post.body | truncatechars:100 | safe }}<br/><br/>
-                </li>
-            {% endfor %}
-        {% else %}
-            <h2>There is no post with {{ category_name }} category</h2><br/><br/>
-        {% endif %}
-        <a href="{% url 'home-url' %}" class="btn btn-secondary">Home</a>
 
-        </ul>
-    {% endblock %}
+{% block content %}
+    {% if category_post %}
+        <h1>Posts with category: {{ category_name }}</h1>
+        {% for post in category_post %}
+            <li><a href="{% url 'post-detail-url' post.slug %}">
+                {{ post.title }}</a> - {{ post.author }}<br/>
+                {{ post.body | truncatechars:100 | safe }}<br/><br/>
+            </li>
+        {% endfor %}
+    {% else %}
+        <h2>There is no post with {{ category_name }} category</h2><br/><br/>
+    {% endif %}
+    <a href="{% url 'home-url' %}" class="btn btn-secondary">Home</a>
+
+
+{% endblock %}

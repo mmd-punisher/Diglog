@@ -2,26 +2,24 @@
 {% load static %}
 
 {% block title %}
-    Editing {{ post.title }}
+    Edit Profile Page
 {% endblock %}
 
 {% block content %}
     {% if user.is_authenticated %}
-        {% if user.id == post.author.id %}
-            <h1>Edit your post</h1>
+        {% if user.id == profile.user.id %}
+            <h1>Edit Profile Page</h1>
             <br/>
             <br/>
             <div class="form-group">
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="btn btn-info">Save changes</button>
-                    <a href="{% url 'post-detail-url' post.slug %}" class="btn btn-secondary">Back</a>
-
+                    <button class="btn btn-info">Update Profile Page</button>
                 </form>
             </div>
         {% else %}
-            You are not allowed to EDIT someone's post :/
+            You are not allowed to CHANGE someone's profile :/
         {% endif %}
     {% else %}
         <img src="{% static 'blog/images/Access-denied_story.jpg' %}" alt="Access Denied">

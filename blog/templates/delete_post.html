@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-{% if user.is_authenticated %}
-    {% block title %}
-        Delete {{ post.title }}
-    {% endblock %}
+{% load static %}
+{% block title %}
+    Delete {{ post.title }}
+{% endblock %}
 
-    {% block content %}
+{% block content %}
+    {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
-
             <h1>Delete post: {{ post.title }}</h1>
             <br/>
             <br/>
@@ -17,9 +17,14 @@
                     <br/>
                     <br/>
                     <button class="btn btn-secondary">Delete post</button>
-                    <a href="{% url 'post-detail-url' post.pk %}" class="btn btn-secondary">Back</a>
+                    <a href="{% url 'post-detail-url' post.slug %}" class="btn btn-secondary">Back</a>
                 </form>
             </div>
+        {% else %}
+            You are not allowed to DELETE someone's post :/
         {% endif %}
-    {% endblock %}
-{% endif %}
+    {% else %}
+        <img src="{% static 'blog/images/Access-denied_story.jpg' %}" alt="Access Denied">
+    {% endif %}
+
+{% endblock %}

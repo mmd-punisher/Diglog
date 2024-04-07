@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
-{% if user.is_authenticated %}
-    {% block title %}
-        Create post
-    {% endblock %}
+{% load static %}
+{% block title %}
+    Create post
+{% endblock %}
 
-    {% block content %}
+{% block content %}
+    {% if user.is_authenticated %}
         <h1>Create your post</h1>
         <br/>
         <br/>
@@ -21,6 +22,8 @@
             var name = "{{ user.id }}"
             document.getElementById("auther_field").value = name;
         </script>
+    {% else %}
+        <img src="{% static 'blog/images/Access-denied_story.jpg' %}" alt="Access Denied">
+    {% endif %}
 
-    {% endblock %}
-{% endif %}
+{% endblock %}
