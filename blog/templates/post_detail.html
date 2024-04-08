@@ -9,7 +9,15 @@
     <small>By: {{ post.author.first_name }} {{ post.author.last_name }} - At {{ post.pub_date | date:'d F Y' }}</small>
     <hr>
     {% if post.header_image %}
-        <img src="{{ post.header_image.url }}" alt="Profile Image">
+        {#        <img src="{{ post.header_image.url }}" alt="Header img" style="padding: 0; display: block; margin: 0 auto; max-height: 100%; max-width: 100%;">#}
+        <img src="{{ post.header_image.url }}" alt="Header img"
+             style="object-fit:cover;
+            width:1300px;
+            height:300px;
+            border: solid 1px #CCC;
+            padding: 0;
+            display: block;
+            margin: 0 auto">
     {% endif %}
     <p>{{ post.body | safe }}</p>
     <br/>
@@ -83,8 +91,9 @@
             </div>
         </div>
         {#    <img src="" width=100 height=100 class="rounded-circle">#}
-        {% elif user.id == post.author.id %}
-        <p>Please <a href="{% url 'create-profile-page-url' %}" style="color: darkseagreen">create your profile</a> to unlock to many options.</p>
+    {% elif user.id == post.author.id %}
+        <p>Please <a href="{% url 'create-profile-page-url' %}" style="color: darkseagreen">create your profile</a> to
+            unlock to many options.</p>
     {% endif %}
 
 {% endblock %}

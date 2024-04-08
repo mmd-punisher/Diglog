@@ -34,7 +34,7 @@ class EditForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ['title', 'category', 'short_description', 'body']
+        fields = ['title', 'category', 'short_description', 'body', 'header_image']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'category': forms.Select(choices=display_choices(), attrs={'class': 'form-control'}),
