@@ -31,6 +31,7 @@
         <br/>
         <hr>
         <form action="{% url 'like-post-url' post.slug %}" method="post">
+            <h2>{{ total_likes }} likes</h2>
             {% csrf_token %}
             {% if liked %}
                 <button type="submit" name="post_like" value="{{ post.slug }}" class="btn btn-danger">
@@ -41,18 +42,14 @@
                     Like
                 </button>
             {% endif %}
-            - {{ total_likes }} likes
         </form>
+        <hr>
     {% else %}
         <br/>
         <br/>
         <small><a href="{% url 'login' %}">Login</a> to like and comment</small>
     {% endif %}
 
-    <h4>Also You May Like More Posts With <a href="{% url 'category-list-url' post.category %}">{{ post.category }}</a>
-        Category</h4>
-
-    <br/><br/>
     {% if post.author.profile.slug %}
         <h2>About Author</h2>
         <div class="card mb-3">
@@ -94,6 +91,32 @@
     {% elif user.id == post.author.id %}
         <p>Please <a href="{% url 'create-profile-page-url' %}" style="color: darkseagreen">create your profile</a> to
             unlock to many options.</p>
-    {% endif %}
+    {% endif %}<br/>
+    <h2>Comments</h2>
+    <hr>
+    {% if not post.comments.all %}
+        <p>There is no comments for {{ post.title }} yet! <a href="#">Add One 📨</a></p>
+    {% else %}
+        {% for comment in post.comments.all %}
+            {#            <strong>{{ comment.name }} - {{ comment.date }}</strong><br/>#}
+            {#            {{ comment.body }}#}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <strong class="card-title">{{ comment.name }}</strong>
+                    <p class="card-text"><small class="text-body-secondary">
+                        {{ comment.date }}
+                    </small>
+                    </p>
+                    <p class="card-text">{{ comment.body }}</p>
+                </div>
+            </div><br/>
 
+
+        {% endfor %}
+    {% endif %}
+    <br/>
+    <hr>
+    <h5>You Also May Like More Posts With <a href="{% url 'category-list-url' post.category %}">{{ post.category }}</a>
+        Category</h5><br/><br/>
+    <hr>
 {% endblock %}
