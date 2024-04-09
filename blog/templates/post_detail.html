@@ -47,7 +47,7 @@
     {% else %}
         <br/>
         <br/>
-        <small><a href="{% url 'login' %}">Login</a> to your account to like and comment</small>
+        <strong><a href="{% url 'login' %}">Login</a> to your account to like and comment</strong><hr>
     {% endif %}
 
     {% if post.author.profile.slug %}
@@ -92,8 +92,8 @@
         <p>Please <a href="{% url 'create-profile-page-url' %}" style="color: darkseagreen">create your profile</a> to
             unlock to many options.</p>
     {% endif %}<br/>
-    {% if user.is_authenticated %}
 
+    {% if user.is_authenticated %}
     <h2>Comments</h2>
     <hr>
     {% if not post.comments.all %}
@@ -113,8 +113,6 @@
                     <p class="card-text">{{ comment.body }}</p>
                 </div>
             </div><br/>
-
-
         {% endfor %}
     {% endif %}
 

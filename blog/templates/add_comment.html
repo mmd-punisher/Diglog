@@ -20,5 +20,8 @@
     {% else %}
         <img src="{% static 'blog/images/Access-denied_story.jpg' %}" alt="Access Denied">
     {% endif %}
-
+        <script>
+            var user_name = "{{ user.first_name }} {{ user.last_name }}"
+            document.getElementById("name_field").value = user_name;
+        </script>
 {% endblock %}
