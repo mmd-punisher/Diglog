@@ -77,5 +77,4 @@ class ProfilePageForm(forms.ModelForm):
             'website_link': forms.TextInput(attrs={'class': 'form-control'}),
             'instagram_link': forms.TextInput(attrs={'class': 'form-control'}),
             'twitter_link': forms.TextInput(attrs={'class': 'form-control'})
-
         }

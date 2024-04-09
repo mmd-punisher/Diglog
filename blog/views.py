@@ -3,8 +3,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from blog.forms import PostForm, EditForm
-from blog.models import Post, Category, Profile
+from blog.forms import PostForm, EditForm, CommentForm
+from blog.models import Post, Category, Comment
 
 
 class HomeView(ListView):
@@ -89,6 +89,17 @@ def like_view(request, slug):
 
     return HttpResponseRedirect(reverse('post-detail-url', args=[str(slug)]))
 
+
 # def user_profile(request, username):
 #     the_user = Profile.objects.get(username=request.user.username)
 #     return render()
+
+class AddCommentView(CreateView):
+    model = Comment
+    template_name = 'add_comment.html'
+    form_class = CommentForm
+    success_url = reverse_lazy('home-url')
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)

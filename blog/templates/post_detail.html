@@ -47,7 +47,7 @@
     {% else %}
         <br/>
         <br/>
-        <small><a href="{% url 'login' %}">Login</a> to like and comment</small>
+        <small><a href="{% url 'login' %}">Login</a> to your account to like and comment</small>
     {% endif %}
 
     {% if post.author.profile.slug %}
@@ -92,11 +92,14 @@
         <p>Please <a href="{% url 'create-profile-page-url' %}" style="color: darkseagreen">create your profile</a> to
             unlock to many options.</p>
     {% endif %}<br/>
+    {% if user.is_authenticated %}
+
     <h2>Comments</h2>
     <hr>
     {% if not post.comments.all %}
-        <p>There is no comments for {{ post.title }} yet! <a href="#">Add One 📨</a></p>
+        <p>There is no comments for {{ post.title }} yet! <a href="{% url 'add-comment-url' post.pk %}">Add One 📨</a></p>
     {% else %}
+        <h4><a href="{% url 'add-comment-url' post.pk %}" style="color: steelblue">Add New Comment!</a></h4><br/><br/>
         {% for comment in post.comments.all %}
             {#            <strong>{{ comment.name }} - {{ comment.date }}</strong><br/>#}
             {#            {{ comment.body }}#}
@@ -113,6 +116,8 @@
 
 
         {% endfor %}
+    {% endif %}
+
     {% endif %}
     <br/>
     <hr>
