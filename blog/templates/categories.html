@@ -9,12 +9,13 @@
         {% for post in category_post %}
             <li><a href="{% url 'post-detail-url' post.slug %}">
                 {{ post.title }}</a> - {{ post.author }}<br/>
-                {{ post.body | truncatechars:100 | safe }}<br/><br/>
+                {{ post.short_description | truncatechars:100|safe }}<br/>
             </li>
         {% endfor %}
     {% else %}
         <h2>There is no post with {{ category_name }} category</h2><br/><br/>
     {% endif %}
+    <br/>
     <a href="{% url 'home-url' %}" class="btn btn-secondary">Home</a>
 
 

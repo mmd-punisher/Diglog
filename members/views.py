@@ -47,7 +47,8 @@ class ShowProfileView(generic.DetailView):
 class EditProfilePageView(generic.UpdateView):
     model = Profile
     template_name = 'registration/edit_profile_page.html'
-    fields = ['bio', 'profile_pic', 'website_link', 'instagram_link', 'twitter_link']
+    form_class = ProfilePageForm
+    # fields = ['bio', 'profile_pic', 'website_link', 'instagram_link', 'twitter_link']
     success_url = reverse_lazy('home-url')
 
 

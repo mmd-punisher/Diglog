@@ -25,14 +25,16 @@
     <a href="{% url 'home-url' %}" class="btn btn-secondary">Back</a>
     {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
-            <a href="{% url 'edit-post-url' post.slug %}" class="btn btn-secondary">Edit</a>
-            <a href="{% url 'delete-post-url' post.slug %}" class="btn btn-secondary">Delete</a>
+            <a href="{% url 'edit-post-url' post.slug %}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'delete-post-url' post.slug %}" class="btn btn-danger">Delete</a>
         {% endif %}
-        <br/>
-        <hr>
-        <form action="{% url 'like-post-url' post.slug %}" method="post">
-            <h2>{{ total_likes }} likes</h2>
-            {% csrf_token %}
+    {% endif %}
+    <br/>
+    <hr>
+    <form action="{% url 'like-post-url' post.slug %}" method="post">
+        <h2>{{ total_likes }} likes</h2>
+        {% csrf_token %}
+        {% if user.is_authenticated %}
             {% if liked %}
                 <button type="submit" name="post_like" value="{{ post.slug }}" class="btn btn-danger">
                     UnLike
@@ -42,13 +44,15 @@
                     Like
                 </button>
             {% endif %}
-        </form>
-        <hr>
-    {% else %}
-        <br/>
-        <br/>
-        <strong><a href="{% url 'login' %}">Login</a> to your account to like and comment</strong><hr>
-    {% endif %}
+            </form>
+            <hr>
+        {% else %}
+            <br/>
+            <br/>
+            <strong><a href="{% url 'login' %}">Login</a> to your account, to like and comment
+                for {{ post.author.first_name }} {{ post.author.last_name }}</strong>
+            <hr>
+        {% endif %}
 
     {% if post.author.profile.slug %}
         <h2>About Author</h2>
@@ -68,8 +72,10 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ post.author.first_name }} {{ post.author.last_name }}</h5>
                         <p class="card-text"><small class="text-body-secondary">
+                            <a target="_blank" href="{% url 'show-profile-url' post.author.profile.slug %}">Profile
+                                Page</a>
                             {% if post.author.profile.website_link %}
-                                <a target="_blank" href="{{ post.author.profile.website_link }}">Website</a>
+                                | <a target="_blank" href="{{ post.author.profile.website_link }}">Website</a>
                             {% endif %}
 
                             {% if post.author.profile.instagram_link %}
@@ -77,12 +83,11 @@
                             {% endif %}
 
                             {% if post.author.profile.twitter_link %}
-                                |<a target="_blank" href="{{ post.author.profile.twitter_link }}">Twitter</a>
+                                | <a target="_blank" href="{{ post.author.profile.twitter_link }}">Twitter</a>
                             {% endif %}
                         </small>
                         </p>
                         <p class="card-text">{{ post.author.profile.bio }}</p>
-                        <a href="{% url 'show-profile-url' post.author.profile.slug %}">Profile page</a>
                     </div>
                 </div>
             </div>
@@ -91,18 +96,18 @@
     {% elif user.id == post.author.id %}
         <p>Please <a href="{% url 'create-profile-page-url' %}" style="color: darkseagreen">create your profile</a> to
             unlock to many options.</p>
-    {% endif %}<br/>
-
-    {% if user.is_authenticated %}
+    {% endif %}
+    <br/>
     <h2>Comments</h2>
     <hr>
+    <br/>
     {% if not post.comments.all %}
-        <p>There is no comments for {{ post.title }} yet! <a href="{% url 'add-comment-url' post.pk %}">Add One 📨</a></p>
+        {% if not user.is_authenticated %}
+            <p>There is no comments for {{ post.title }} yet! <a href="{% url 'login' %}">Login</a> to add comments
+            </p>
+        {% endif %}
     {% else %}
-        <h4><a href="{% url 'add-comment-url' post.pk %}" style="color: steelblue">Add New Comment!</a></h4><br/><br/>
         {% for comment in post.comments.all %}
-            {#            <strong>{{ comment.name }} - {{ comment.date }}</strong><br/>#}
-            {#            {{ comment.body }}#}
             <div class="card mb-3">
                 <div class="card-body">
                     <strong class="card-title">{{ comment.name }}</strong>
@@ -115,11 +120,26 @@
             </div><br/>
         {% endfor %}
     {% endif %}
-
+    {% if not post.comments.all %}
+        {% if user.is_authenticated %}
+            <p>There is no comments for {{ post.title }} yet! <a href="{% url 'add-comment-url' post.pk %}">Add One
+                📨</a>
+            </p>
+        {% endif %}
+    {% else %}
+        {% if user.is_authenticated %}
+            <a href="{% url 'add-comment-url' post.pk %}" style="color: steelblue" class="btn btn-light">Add New
+                Comment!</a><br/>
+        {% endif %}
     {% endif %}
+
     <br/>
     <hr>
-    <h5>You Also May Like More Posts With <a href="{% url 'category-list-url' post.category %}">{{ post.category }}</a>
-        Category</h5><br/><br/>
-    <hr>
+    <h5>
+        You Also May Like More Posts With <a href="{% url 'category-list-url' post.category %}">{{ post.category }}</a>
+        Category
+    </h5>
+    <br/>
+    <br/>
+
 {% endblock %}

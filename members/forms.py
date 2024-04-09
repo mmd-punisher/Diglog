@@ -72,9 +72,10 @@ class ProfilePageForm(forms.ModelForm):
         model = Profile
         fields = ['bio', 'profile_pic', 'website_link', 'instagram_link', 'twitter_link']
         widgets = {
-            'bio': forms.Textarea(attrs={'class': 'form-control'}),
+            'bio': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Maximum 500 characters'}),
             # 'profile_pic': forms,
             'website_link': forms.TextInput(attrs={'class': 'form-control'}),
             'instagram_link': forms.TextInput(attrs={'class': 'form-control'}),
             'twitter_link': forms.TextInput(attrs={'class': 'form-control'})
         }
+

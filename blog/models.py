@@ -43,7 +43,7 @@ class Post(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)  # Associate with User model
-    bio = models.TextField(max_length=355)
+    bio = models.TextField(max_length=500)
     profile_pic = models.ImageField(null=True, blank=True, upload_to='images/profile/')
     website_link = models.CharField(max_length=255, null=True, blank=True)
     instagram_link = models.CharField(max_length=255, null=True, blank=True)

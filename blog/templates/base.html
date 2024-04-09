@@ -22,7 +22,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <strong><a class="navbar-brand" href="{% url 'home-url' %}" style="color: lightskyblue; font-family: 'Copperplate Gothic Light',serif" >Diglog</a></strong>
+        <strong><a class="navbar-brand" href="{% url 'home-url' %}"
+                   style="color: lightskyblue; font-family: 'Copperplate Gothic Light',serif">Diglog</a></strong>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -59,35 +60,6 @@
                         <a class="nav-link" href="{% url 'add-category-url' %}">Add Category</a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Profile
-                        </a>
-
-                        {% if user.profile.slug %}
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'show-profile-url' user.profile.slug %}">Profile
-                                    Page</a></li>
-                                <li><a class="dropdown-item" href="{% url 'edit-profile-page-url' user.profile.slug %}">Edit
-                                    Profile Page</a>
-                                </li>
-                                <li><a class="dropdown-item" href="{% url 'edit-settings-url' %}">Edit Settings</a>
-                                </li>
-                            </ul>
-                        {% else %}
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'create-profile-page-url' %}">Create Your
-                                    Profile</a>
-                                </li>
-                            </ul>
-                        {% endif %}
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout-url' %}" style="color: red">Logout</a>
-                    </li>
                     <meta name="viewport" content="width=device-width, initial-scale=1">
 
                 {% else %}
@@ -99,18 +71,66 @@
                         <a class="nav-link" href="{% url 'login' %}" style="color: moccasin">Login</a>
                     </li>
                 {% endif %}
-
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+
+            {% if user.is_authenticated %}
+                <ul class="navbar-nav mb-2 mb-lg-0 text-align: left">
+                    <li class="nav-item dropdown" style="padding-left:40px ;">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            {{ user.first_name }} {{ user.last_name }}
+                        </a>
+                        {% if user.profile.slug %}
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'show-profile-url' user.profile.slug %}">Profile
+                                    Page</a></li>
+                                <li><a class="dropdown-item" href="{% url 'edit-profile-page-url' user.profile.slug %}">Edit
+                                    Profile Page</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'edit-settings-url' %}">Edit Settings</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'logout-url' %}" style="color: red">Logout</a>
+                                </li>
+                            </ul>
+                        {% else %}
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'create-profile-page-url' %}">Create Your
+                                    Profile</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'edit-settings-url' %}">Edit Settings</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'logout-url' %}" style="color: red">Logout</a>
+                                </li>
+                            </ul>
+                        {% endif %}
+
+                    </li>
+                </ul>
+            {% endif %}
+
+
+            {#            <form class="d-flex" role="search">#}
+            {#                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">#}
+            {#                <button class="btn btn-outline-success" type="submit">Search</button>#}
+            {#            </form>#}
         </div>
+
     </div>
 </nav>
 
 <br/>
+
 <div class="container">
+
     {% block content %}
 
     {% endblock %}

@@ -15,7 +15,7 @@
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="btn btn-info">Save changes</button>
+                    <button class="btn btn-outline-info">Save changes</button>
                     <a href="{% url 'post-detail-url' post.slug %}" class="btn btn-secondary">Back</a>
 
                 </form>
