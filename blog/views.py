@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from blog.forms import PostForm, EditForm, CommentForm
 from blog.models import Post, Category, Comment
+from hitcount.views import HitCountDetailView
 
 
 class HomeView(ListView):
@@ -19,9 +20,10 @@ class HomeView(ListView):
         return context
 
 
-class PostDetailView(DetailView):
+class PostDetailView(HitCountDetailView):
     model = Post
     template_name = 'post_detail.html'
+    count_hit = True
 
     def get_context_data(self, **kwargs):
         li = get_object_or_404(Post, slug=self.kwargs['slug'])
