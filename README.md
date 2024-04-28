@@ -1,6 +1,6 @@
 # Diglog
 
-Aweblog project base on django
+A Weblog Project Base On Django
 
 ---
 
