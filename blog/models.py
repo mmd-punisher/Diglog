@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
+from django.utils import timezone
 
 
 class Category(models.Model):
@@ -26,7 +27,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     likes = models.ManyToManyField(User, related_name='blog_posts')
     short_description = models.CharField(max_length=350)
-    # date_updated = models.DateTimeField(auto_now=True)
+    date_updated = models.DateTimeField(auto_now=True)
 
     def total_likes(self):
         return self.likes.count()
