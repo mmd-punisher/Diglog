@@ -1,9 +1,11 @@
+from datetime import datetime
+
+from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordChangeView
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from django.contrib.auth.forms import PasswordChangeForm
 from django.urls import reverse_lazy
-from blog.models import Profile
+from blog.models import Profile, Post
 from .forms import RegisterForm, EditProfileForm, PasswordChangingForm, ProfilePageForm
 
 
@@ -37,10 +39,18 @@ class ShowProfileView(generic.DetailView):
     model = Profile
     template_name = 'registration/user_profile.html'
 
+    # def get_user(self):
+    #     id_ = self.kwargs.get("username")
+    #     user = get_object_or_404(User, username=id_)
+    #     return user
+
     def get_context_data(self, **kwargs):
         context = super(ShowProfileView, self).get_context_data(**kwargs)
         the_user = get_object_or_404(Profile, slug=self.kwargs['slug'])
         context['the_user'] = the_user
+        user_posts = Post.objects.filter(author=the_user.user)
+        context.update({'user_posts': user_posts})
+
         return context
 
 
