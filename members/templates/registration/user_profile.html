@@ -25,7 +25,7 @@
                         {% endif %}
 
                         {% if the_user.instagram_link %}
-                            | <a target="_blank" href="{{the_user.instagram_link }}">Instagram</a>
+                            | <a target="_blank" href="{{ the_user.instagram_link }}">Instagram</a>
                         {% endif %}
 
                         {% if the_user.twitter_link %}
@@ -38,5 +38,11 @@
             </div>
         </div>
     </div>
-
+    {% for post in user_posts %}
+        <li><a href="{% url 'post-detail-url' post.slug %}">
+            {{ post.title }}</a> - {{ post.author.first_name }} {{ post.author.last_name }} - (<a
+                href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a>)<br/>
+            {{ post.short_description | truncatechars:100|safe }}<br/>
+        </li>
+    {% endfor %}
 {% endblock %}
