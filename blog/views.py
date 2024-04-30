@@ -2,7 +2,7 @@ from django.contrib.auth import logout
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from blog.forms import PostForm, EditForm, CommentForm
 from blog.models import Post, Category, Comment
 from hitcount.views import HitCountDetailView
@@ -105,3 +105,12 @@ class AddCommentView(CreateView):
     def form_valid(self, form):
         form.instance.post_id = self.kwargs['pk']
         return super().form_valid(form)
+
+
+def search(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        search_post = Post.objects.filter(title__icontains=searched)
+        return render(request, 'search.html', {'searched': searched, 'posts': search_post})
+    else:
+        return render(request, 'search.html', {})

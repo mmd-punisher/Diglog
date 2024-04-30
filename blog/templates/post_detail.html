@@ -30,7 +30,7 @@
     <p>{{ post.body | safe }}</p>
     <br/>
     <br/>
-    <p>Last update at {{ post.date_updated | date:'f' }} on {{ post.date_updated | date:'d F Y' }}</p>
+    <p>Last update at {{ post.date_updated | date:'H:i' }} on {{ post.date_updated | date:'d F Y' }}</p>
     <a href="{% url 'home-url' %}" class="btn btn-secondary">Back</a>
     {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
