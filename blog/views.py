@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.core.paginator import Paginator, EmptyPage
 from blog.forms import PostForm, EditForm, CommentForm
 from blog.models import Post, Category, Comment
 from hitcount.views import HitCountDetailView
@@ -17,6 +18,24 @@ class HomeView(ListView):
         category_menu = Category.objects.all()
         context = super(HomeView, self).get_context_data(**kwargs)
         context['category_menu'] = category_menu
+
+        # 3 top posts
+        top_3posts = Post.objects.all().order_by('-likes')[:3]
+
+        # Paging
+        staff = Post.objects.all()
+        p = Paginator(staff, 10)
+        page_num = self.request.GET.get('page', 1)
+        print(p.num_pages)
+        try:
+            page = p.page(page_num)
+        except EmptyPage:
+            page = p.page(1)
+
+        context.update({
+            'top_3posts': top_3posts,
+            'page': page,
+        })
         return context
 
 

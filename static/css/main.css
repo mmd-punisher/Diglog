@@ -1250,6 +1250,10 @@ input::-moz-focus-inner {
 	background-repeat: no-repeat;
 }
 
+/*.post-background >img{*/
+/*	height:100%;*/
+/*}*/
+
 .featured-post-slide .overlay {
 	background-color: rgba(0, 0, 0, 0.3);
 	position: absolute;

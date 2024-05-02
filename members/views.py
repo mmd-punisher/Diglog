@@ -39,11 +39,6 @@ class ShowProfileView(generic.DetailView):
     model = Profile
     template_name = 'registration/user_profile.html'
 
-    # def get_user(self):
-    #     id_ = self.kwargs.get("username")
-    #     user = get_object_or_404(User, username=id_)
-    #     return user
-
     def get_context_data(self, **kwargs):
         context = super(ShowProfileView, self).get_context_data(**kwargs)
         the_user = get_object_or_404(Profile, slug=self.kwargs['slug'])
