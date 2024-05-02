@@ -42,9 +42,9 @@
                             Categories
                         </a>
                         <ul class="dropdown-menu">
-                            {% for categoty in category_menu %}
+                            {% for category in category_menu %}
                                 <li><a class="dropdown-item"
-                                       href="{% url 'category-list-url' categoty|slugify %}">{{ categoty }}</a></li>
+                                       href="{% url 'category-list-url' category|slugify %}">{{ category }}</a></li>
                             {% endfor %}
                             <li>
                                 <hr class="dropdown-divider">

@@ -12,15 +12,15 @@
             <ul class="main-navigation sf-menu">
                 <li class="current"><a href="index.html" title="">Home</a></li>
                 <li class="has-children">
+                    {#                    {% if category_menu %}#}
+
                     <a href="category.html" title="">Categories</a>
                     <ul class="sub-menu">
-                        <li><a href="category.html">Wordpress</a></li>
-                        <li><a href="category.html">HTML</a></li>
-                        <li><a href="category.html">Photography</a></li>
-                        <li><a href="category.html">UI</a></li>
-                        <li><a href="category.html">Mockups</a></li>
-                        <li><a href="category.html">Branding</a></li>
+                        {% for category in categories_menu %}
+                            <li><a href="{% url 'category-list-url' category|slugify %}">{{ category }}</a></li>
+                        {% endfor %}
                     </ul>
+                    {#                    {% endif %}#}
                 </li>
                 <li class="has-children">
                     <a href="single-standard.html" title="">Blog</a>
