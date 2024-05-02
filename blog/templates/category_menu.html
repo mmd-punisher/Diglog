@@ -1,16 +1,61 @@
-{% extends 'base.html' %}
+{% extends 'landing/_layout.html' %}
+
+{#{% block title %}#}
+{#    All Categories#}
+{#{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <h1>Categories menu</h1>#}
+{#    <ul>#}
+{#        {% for category in categories_menu %}#}
+{#            <li>#}
+{#                <a href="{% url 'category-list-url' category.name %}"> {{ category.name }}</a>#}
+{#            </li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#{% endblock %}#}
 
 {% block title %}
     All Categories
 {% endblock %}
 
 {% block content %}
-    <h1>Categories menu</h1>
-    <ul>
-        {% for category in categories_menu %}
-            <li>
-                <a href="{% url 'category-list-url' category.name %}"> {{ category.name }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+
+    <section id="page-header">
+        <div class="row current-cat">
+            <div class="col-full">
+                <h1>Categories menu</h1>
+            </div>
+        </div>
+    </section>
+    <section id="bricks" class="with-top-sep">
+        <div class="row current-cat">
+            <div class="col-full">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Posts Count</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for category, count in categories_menu %}
+                        <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td><a href="{% url 'category-list-url' category %}"> {{ category }}</a>
+                            </td>
+                            <td>{{ count }}</td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+
+    </section>
 {% endblock %}

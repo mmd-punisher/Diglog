@@ -1,4 +1,7 @@
+from collections import Counter
+
 from django.contrib.auth import logout
+from django.db.models import Count
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
@@ -88,8 +91,12 @@ def category_list(request, category_name):
 
 
 def category_menu(request):
-    categories_menu = Category.objects.all()
-    context = {'categories_menu': categories_menu}
+    categories = Category.objects.all()
+    posts = Post.objects.all()
+    category_counts = Counter(post.category for post in posts)
+    category_cats = [(category.name, category_counts[category.name]) for category in categories]
+
+    context = {'categories_menu': category_cats}
     return render(request, 'category_menu.html', context)
 
 

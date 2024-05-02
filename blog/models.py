@@ -12,6 +12,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def posts_num(self):
+        return Post.objects.filter(category=self.name).count()
+
     def get_absolute_url(self):
         # return reverse('post-detail-url', args=(str(self.id)))
         return reverse('home-url')
