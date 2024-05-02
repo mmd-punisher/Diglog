@@ -8,10 +8,6 @@ from blog.models import Post, Category, Comment
 from hitcount.views import HitCountDetailView
 
 
-def index(request):
-    return render(request, 'blog/index.html')
-
-
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'

@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     # ------
     'blog',
     'members',
+    'landing',
     # ------
     'ckeditor',
     'ckeditor_uploader',
     'hitcount',
+    'django_render_partial',
 
 ]
 
