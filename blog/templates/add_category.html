@@ -1,26 +1,38 @@
-{% extends 'base.html' %}
+{#{% extends 'base.html' %}#}
+{% extends 'landing/_layout.html' %}
 {% block title %}
     Add category
 {% endblock %}
 
 {% block content %}
     {% if user.is_authenticated %}
+        <section id="content-wrap" class="site-page">
 
-        <h1>Add category</h1>
-        <br/>
-        <br/>
-        <div class="form-group">
-            <form method="POST">
-                {% csrf_token %}
-                {{ form.media }}
-                <div class="mb-3 row">
-                    <div class="col-sm-3">
-                        <label class="col-sm-5 col-form-label">Category Name</label><br/>
-                        <input type="text" class="form-control" name="name">
+            <div class="row">
+
+                <div class="col-twelve">
+
+                    <div class="primary-content">
+                        <h1>Add category</h1>
+                        <br/>
+                        <br/>
+                        <div class="form-field">
+                            <form method="POST">
+                                {% csrf_token %}
+                                {{ form.media }}
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Category Name
+                                        <input type="text" class="full-width" name="name">
+                                    </label>
+                                    <br/>
+                                    <button class="btn btn-secondary">Save category</button>
+
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <button class="btn btn-secondary">Save category</button>
-            </form>
-        </div>
+            </div>
+        </section>
     {% endif %}
 {% endblock %}
