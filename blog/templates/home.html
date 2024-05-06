@@ -1,4 +1,5 @@
 {% extends 'landing/_layout.html' %}
+{% load static %}
 
 {% block content %}
     {#    <h1>Posts</h1>#}
@@ -19,9 +20,9 @@
             <!-- brick-wrapper -->
             <div class="bricks-wrapper">
 
-                    <div class="grid-sizer"></div>
+                <div class="grid-sizer"></div>
                 {% if page.number == 1 %}
-            
+
                     <div class="brick entry featured-grid animate-this">
                         <div class="entry-content">
                             <div id="featured-post-slider" class="flexslider">
@@ -34,6 +35,10 @@
                                                 <div class="post-background">
                                                     {% if top.header_image %}
                                                         <img src="{{ top.header_image.url }}" alt="Header img"
+                                                             style="height: 100%">
+                                                    {% else %}
+                                                        <img src="{% static 'images/post-default.jpg' %}"
+                                                             alt="Header img"
                                                              style="height: 100%">
                                                     {% endif %}
                                                 </div>
@@ -60,22 +65,20 @@
                         </div> <!-- end entry content -->
                     </div>
                 {% endif %}
-            
+
 
                 {% for post in page %}
                     <article class="brick entry format-standard animate-this">
                         {% if post.header_image %}
-
                             <div class="entry-thumb">
                                 <a href="{% url 'post-detail-url' post.slug %}" class="thumb-link">
                                     <img src="{{ post.header_image.url }}" alt="building">
                                 </a>
                             </div>
                         {% else %}
-                            <!-- NEED DEFAULT IMAGE-->
                             <div class="entry-thumb">
                                 <a href="{% url 'post-detail-url' post.slug %}" class="thumb-link">
-                                    <img src="" alt="building">
+                                    <img src="{% static 'images/post-default.jpg' %}" alt="building">
                                 </a>
                             </div>
                         {% endif %}

@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from blog.models import Category
 
 
 def index(request):
-    return render(request, 'landing/index_page.html')
+    # return render(request, 'landing/index_page.html')
+    return redirect('home-url')
 
 
 def header_component(request):
