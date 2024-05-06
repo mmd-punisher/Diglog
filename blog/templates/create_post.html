@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{#{% extends 'landing/_layout.html' %}#}
+
 {% load static %}
 {% block title %}
     Create post
@@ -17,7 +19,6 @@
                 <button class="btn btn-secondary">Post</button>
             </form>
         </div>
-
         <script>
             var name = "{{ user.id }}"
             document.getElementById("auther_field").value = name;

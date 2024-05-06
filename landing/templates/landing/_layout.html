@@ -1,5 +1,10 @@
 {% load render_partial %}
 
+{% block extrahead %}
+    <script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+    {{ block.super }}
+{% endblock %}
+
 <!DOCTYPE html>
 <!--[if IE 8 ]>
 <html class="no-js oldie ie8" lang="en"> <![endif]-->
