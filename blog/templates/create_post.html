@@ -23,7 +23,7 @@
                                 {% csrf_token %}
                                 {{ form.media }}
                                 {{ form.as_p }}
-                                <button class="btn btn-secondary">Post</button>
+                                <button class="submit button-primary full-width-on-mobile">Post</button>
                             </form>
                         </div>
                         <script>
@@ -37,7 +37,52 @@
             </div>
         </section>
     {% else %}
-        <img src="{% static 'blog/images/Access-denied_story.jpg' %}" alt="Access Denied">
+{#        <button class="border-el-btn access_denied" style="#}
+{##}
+{##}
+{#  color: red;#}
+{#  outline: none;#}
+{#  border: none;#}
+{#  font-size: 17px;#}
+{#  padding: 1em 2em;#}
+{#  position: relative;#}
+{#  background: none;#}
+{#  cursor: pointer;#}
+{#  transform: scale(.98);#}
+{#  box-shadow: .1px .1px 2px red;#}
+{#  position: absolute;#}
+{#  background: red;#}
+{#  transition: .5s;#}
+{#  box-shadow: 1px 1px 20px red;#}
+{#  top: 0;#}
+{#  left: 0;#}
+{#  width: 3px;#}
+{#  height: 30%;#}
+{#  height: 100%;#}
+{#  top: 0;#}
+{#  left: 0;#}
+{#  width: 15%;#}
+{#  height: 3px;#}
+{#  width: 100%;#}
+{#  bottom: 0;#}
+{#  right: 0;#}
+{#  width: 3px;#}
+{#  height: 30%;#}
+{#  height: 100%;#}
+{#  bottom: 0;#}
+{#  right: 0;#}
+{#  width: 15%;#}
+{#  height: 3px;#}
+{#  width: 100%;#}
+{##}
+{#">#}
+{#            Access Denied#}
+{#            <span class="b1"></span>#}
+{#            <span class="b2"></span>#}
+{#            <span class="b3"></span>#}
+{#            <span class="b4"></span>#}
+{#        </button>#}
+                <img src="{% static 'images/access-denied.png' %}" alt="Access Denied">
     {% endif %}
 
 {% endblock %}

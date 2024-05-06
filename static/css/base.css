@@ -143,6 +143,76 @@ samp {
 	font-family: monospace, monospace;
 	font-size: 1em;
 }
+/* -------------- */
+
+/*.access_denied {*/
+/*  color: red;*/
+/*  outline: none;*/
+/*  border: none;*/
+/*  font-size: 17px;*/
+/*  padding: 1em 2em;*/
+/*  position: relative;*/
+/*  background: none;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.access_denied:active {*/
+/*  transform: scale(.98);*/
+/*  box-shadow: .1px .1px 2px red;*/
+/*}*/
+
+/*.access_denied span {*/
+/*  position: absolute;*/
+/*  background: red;*/
+/*  transition: .5s;*/
+/*  box-shadow: 1px 1px 20px red;*/
+/*}*/
+
+/*.access_denied span:nth-child(1) {*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 3px;*/
+/*  height: 30%;*/
+/*}*/
+
+/*.access_denied:hover span:nth-child(1) {*/
+/*  height: 100%;*/
+/*}*/
+
+/*.access_denied span:nth-child(2) {*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 15%;*/
+/*  height: 3px;*/
+/*}*/
+
+/*.access_denied:hover span:nth-child(2) {*/
+/*  width: 100%;*/
+/*}*/
+
+/*.access_denied span:nth-child(3) {*/
+/*  bottom: 0;*/
+/*  right: 0;*/
+/*  width: 3px;*/
+/*  height: 30%;*/
+/*}*/
+
+/*.access_denied:hover span:nth-child(3) {*/
+/*  height: 100%;*/
+/*}*/
+
+/*.access_denied span:nth-child(4) {*/
+/*  bottom: 0;*/
+/*  right: 0;*/
+/*  width: 15%;*/
+/*  height: 3px;*/
+/*}*/
+
+/*.access_denied:hover span:nth-child(4) {*/
+/*  width: 100%;*/
+/*}*/
+
+/* -------------- */
 
 button,
 input,

@@ -98,7 +98,7 @@
 
                             </div>
                             <div class="entry-excerpt">
-                                {{ post.short_description }}
+                                {{ post.short_description|truncatechars:240 }}
                             </div>
                         </div>
                     </article> <!-- end article -->

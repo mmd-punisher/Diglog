@@ -136,7 +136,11 @@ class AddCommentView(CreateView):
 def search(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        search_post = Post.objects.filter(title__icontains=searched)
+        search_post = Post.objects.filter(title__icontains=searched).order_by('-pub_date')
         return render(request, 'search.html', {'searched': searched, 'posts': search_post})
     else:
         return render(request, 'search.html', {})
+
+
+def about(request):
+    return render(request, 'about_us.html', {})
