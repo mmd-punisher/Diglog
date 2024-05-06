@@ -56,7 +56,7 @@
                 </ul>
             </div>
             {% if user.is_authenticated %}
-                <p>If the category you want, is not in the list, you can <a href="{% url 'create-post-url' %}" title="">Add a Category</a>.</p>
+                <p>If the category you want, is not in the list, you can <a href="{% url 'add-category-url' %}" title="">Add a Category</a>.</p>
             {% endif %}
         </div>
 

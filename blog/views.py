@@ -26,7 +26,7 @@ class HomeView(ListView):
         top_3posts = Post.objects.all().order_by('-likes')[:3]
 
         # Paging
-        staff = Post.objects.all()
+        staff = Post.objects.order_by('-pub_date')
         p = Paginator(staff, 10)
         page_num = self.request.GET.get('page', 1)
         print(p.num_pages)

@@ -1,5 +1,5 @@
-{% extends 'base.html' %}
-{#{% extends 'landing/_layout.html' %}#}
+{#{% extends 'base.html' %}#}
+{% extends 'landing/_layout.html' %}
 
 {% load static %}
 {% block title %}
@@ -8,21 +8,34 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <h1>Create Your Post</h1>
-        <br/>
-        <br/>
-        <div class="form-group">
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.media }}
-                {{ form.as_p }}
-                <button class="btn btn-secondary">Post</button>
-            </form>
-        </div>
-        <script>
-            var name = "{{ user.id }}"
-            document.getElementById("auther_field").value = name;
-        </script>
+        <section id="content-wrap" class="site-page">
+
+            <div class="row">
+
+                <div class="col-twelve">
+
+                    <div class="primary-content">
+                        <h1>Create Your Post</h1>
+                        <br/>
+                        <br/>
+                        <div class="form-field">
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form.media }}
+                                {{ form.as_p }}
+                                <button class="btn btn-secondary">Post</button>
+                            </form>
+                        </div>
+                        <script>
+                            var name = "{{ user.id }}"
+                            document.getElementById("auther_field").value = name;
+                        </script>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
     {% else %}
         <img src="{% static 'blog/images/Access-denied_story.jpg' %}" alt="Access Denied">
     {% endif %}

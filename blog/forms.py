@@ -17,15 +17,15 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ['title', 'author', 'category', 'short_description', 'body', 'header_image']
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Title here'}),
+            'title': forms.TextInput(attrs={'class': 'full-width', 'placeholder': 'Title here'}),
             'author': forms.TextInput(
-                attrs={'class': 'form-control', 'value': '', 'id': 'auther_field', 'type': 'hidden'}),
-            'category': forms.Select(choices=display_choices(), attrs={'class': 'form-control'}),
+                attrs={'class': 'full-width', 'value': '', 'id': 'auther_field', 'type': 'hidden'}),
+            'category': forms.Select(choices=display_choices(), attrs={'class': 'full-width'}),
             'short_description': forms.Textarea(attrs={
-                'class': 'form-control',
+                'class': 'full-width',
                 'placeholder': 'Write a short description about your post, this text will showed up on main preview.',
                 'rows': 3}),
-            'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Text here'}),
+            'body': forms.Textarea(attrs={'class': 'full-width', 'placeholder': 'Text here'}),
         }
 
 
@@ -36,13 +36,13 @@ class EditForm(forms.ModelForm):
         model = Post
         fields = ['title', 'category', 'short_description', 'body', 'header_image']
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'category': forms.Select(choices=display_choices(), attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'full-width'}),
+            'category': forms.Select(choices=display_choices(), attrs={'class': 'full-width'}),
             'short_description': forms.Textarea(attrs={
-                'class': 'form-control',
+                'class': 'full-width',
                 'placeholder': 'Write a short description about your post, this text will showed up on main preview.',
                 'rows': 3}),
-            'body': forms.Textarea(attrs={'class': 'form-control'}),
+            'body': forms.Textarea(attrs={'class': 'full-width'}),
         }
 
 
