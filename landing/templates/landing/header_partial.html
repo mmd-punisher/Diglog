@@ -10,7 +10,8 @@
 
         <nav id="main-nav-wrap">
             <ul class="main-navigation sf-menu">
-                <li class="{% if request.path == '/posts/' %} current {% endif %}"><a href="{% url 'home-url' %}" title="">Home</a></li>
+                <li class="{% if request.path == '/posts/' %} current {% endif %}"><a href="{% url 'home-url' %}"
+                                                                                      title="">Home</a></li>
                 <li class="{% if request.path == '/posts/categories/' %} has-children current {% else %} has-children {% endif %}">
 
                     <a href="{% url 'category-menu-url' %}" title="">Categories</a>
@@ -26,14 +27,20 @@
                     <li class="{% if request.path == '/posts/create/' %} has-children current {% else %} has-children {% endif %}">
                         <a href="{% url 'create-post-url' %}" title="">Create Post</a></li>
 
-{#                    <svg xmlns="http://www.w3.org/2000/svg" style=" height: 27px; width: 27px" viewBox="0 0 32 32"#}
-{#                         href="">#}
-{#                        <path d="M 16 5 C 12.145852 5 9 8.1458513 9 12 C 9 14.408843 10.23116 16.55212 12.09375 17.8125 C 8.5266131 19.342333 6 22.881262 6 27 L 8 27 C 8 22.569334 11.569334 19 16 19 C 20.430666 19 24 22.569334 24 27 L 26 27 C 26 22.881262 23.473387 19.342333 19.90625 17.8125 C 21.76884 16.55212 23 14.408843 23 12 C 23 8.1458513 19.854148 5 16 5 z M 16 7 C 18.773268 7 21 9.2267317 21 12 C 21 14.773268 18.773268 17 16 17 C 13.226732 17 11 14.773268 11 12 C 11 9.2267317 13.226732 7 16 7 z"#}
-{#                              color="#000"></path>#}
-{#                    </svg>#}
+                    {#                    <svg xmlns="http://www.w3.org/2000/svg" style=" height: 27px; width: 27px" viewBox="0 0 32 32"#}
+                    {#                         href="">#}
+                    {#                        <path d="M 16 5 C 12.145852 5 9 8.1458513 9 12 C 9 14.408843 10.23116 16.55212 12.09375 17.8125 C 8.5266131 19.342333 6 22.881262 6 27 L 8 27 C 8 22.569334 11.569334 19 16 19 C 20.430666 19 24 22.569334 24 27 L 26 27 C 26 22.881262 23.473387 19.342333 19.90625 17.8125 C 21.76884 16.55212 23 14.408843 23 12 C 23 8.1458513 19.854148 5 16 5 z M 16 7 C 18.773268 7 21 9.2267317 21 12 C 21 14.773268 18.773268 17 16 17 C 13.226732 17 11 14.773268 11 12 C 11 9.2267317 13.226732 7 16 7 z"#}
+                    {#                              color="#000"></path>#}
+                    {#                    </svg>#}
+
                     <li class="has-children">
-                        <a href="{% url 'show-profile-url' user.profile.slug %}"
-                           title="">{{ user.first_name }} {{ user.last_name }}</a>
+                        {% if user.profile.slug %}
+
+                            <a href="{% url 'show-profile-url' user.profile.slug %}"
+                               title="">{{ user.first_name }} {{ user.last_name }}</a>
+                        {% else %}
+                            <a href="#" title="">{{ user.first_name }} {{ user.last_name }}</a>
+                        {% endif %}
                         {% if user.profile.slug %}
                             <ul class="sub-menu">
                                 <li><a href="{% url 'show-profile-url' user.profile.slug %}">Profile Page</a></li>
@@ -43,7 +50,7 @@
                             </ul>
                         {% else %}
                             <ul class="sub-menu">
-                                <li><a href="{% url 'create-profile-page-url' %}">Create Your Page</a></li>
+                                <li><a href="{% url 'create-profile-page-url' %}">Complete your profile</a></li>
                                 <li><a href="{% url 'edit-settings-url' %}">Edit Settings</a></li>
                                 <li><a href="{% url 'logout-url' %}" style="color: red">Logout</a></li>
                             </ul>
@@ -52,8 +59,8 @@
                     <li><a href="{% url 'register-url' %}" title="">Sign Up</a></li>
                     <li><a href="{% url 'login' %}" title="">Login</a></li>
                 {% endif %}
-                    <li><a href="{% url 'about-us-url' %}" title="">About Us</a></li>
-            
+                <li><a href="{% url 'about-us-url' %}" title="">About Us</a></li>
+
             </ul>
         </nav> <!-- end main-nav-wrap -->
 

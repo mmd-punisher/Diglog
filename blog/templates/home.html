@@ -87,15 +87,16 @@
                             <div class="entry-header">
 
                                 <div class="entry-meta">
-               			<span class="cat-links">
-               				<a href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a> 
-               			</span>
+               			           <span class="cat-links">
+               				          <a href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a> 
+               			           </span>
                                 </div>
 
-                                <h1 class="entry-title"><a
+                                <h2 class="entry-title"><a
                                         href="{% url 'post-detail-url' post.slug %}">{{ post.title }}</a>
-                                </h1>
-
+                                </h2>
+{#                                <small style="color: #2b2b2b">{{ post.author.first_name }} {{ post.author.last_name }}</small>#}
+                                
                             </div>
                             <div class="entry-excerpt">
                                 {{ post.short_description|truncatechars:240 }}

@@ -161,7 +161,6 @@
             <div class="col-twelve">
                 <article class="format-standard">
                     {% if post.header_image %}
-
                         <div class="content-media">
                             <div class="post-thumb">
                                 <img src="{{ post.header_image.url }}" alt="Header img"
@@ -198,7 +197,6 @@
                         <p class="lead">{{ post.body|safe }}</p>
                         <br>
                         <br>
-                        <br>
                         <!-- Like -->
                         <form action="{% url 'like-post-url' post.slug %}" method="post" name="likeform">
                             <h3>{{ total_likes }} likes</h3>
@@ -230,6 +228,50 @@
                         </p>
                     </div>
 
+                    {% if post.author.profile.slug %}
+
+                        <div class="author-profile">
+                            {% if post.author.profile.profile_pic %}
+                                <img src="{{ post.author.profile.profile_pic.url }}" class="img-fluid rounded-start"
+                                     alt="profile pic">
+                            {% else %}
+                                <img src="{% static 'images/ProfileDefault.webp' %}" class="img-fluid rounded-start"
+                                     alt="profile pic">
+                            {% endif %}
+                            <div class="about">
+                                <h4>
+                                    <a href="{% url 'show-profile-url' post.author.profile.slug %}">{{ post.author.first_name }} {{ post.author.last_name }}</a>
+                                </h4>
+
+                                <p>{{ post.author.profile.bio|safe }}</p>
+
+                                <ul class="author-social">
+                                    {% if post.author.profile.website_link %}
+                                        <li><a target="_blank" href="{{ post.author.profile.website_link }}">Website</a>
+                                        </li>
+
+                                    {% endif %}
+
+                                    {% if post.author.profile.instagram_link %}
+                                        <li><a target="_blank"
+                                               href="{{ post.author.profile.instagram_link }}">Instagram</a></li>
+
+                                    {% endif %}
+
+                                    {% if post.author.profile.twitter_link %}
+                                        <li><a target="_blank" href="{{ post.author.profile.twitter_link }}">Twitter</a>
+                                        </li>
+
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div> <!-- end author-profile -->
+                    {% elif user.id == post.author.id %}
+                        <p class="tags">Please <a href="{% url 'create-profile-page-url' %}"
+                                                  style="color: darkseagreen">create your
+                            profile</a> to
+                            unlock to many options.</p>
+                    {% endif %}
                 </article>
 
             </div>
