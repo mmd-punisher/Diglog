@@ -21,7 +21,29 @@ class HomeView(ListView):
         category_menu = Category.objects.all()
         context = super(HomeView, self).get_context_data(**kwargs)
         context['category_menu'] = category_menu
+        top_3_posts = Post.objects.all().order_by('-likes')[:3]
 
+        page_num = self.request.GET.get('page', 1)
+        if page_num == '1':
+            main_posts = Post.objects.exclude(id__in=top_3_posts.values_list('id', flat=True)).order_by('-pub_date')
+        else:
+            main_posts = Post.objects.order_by('-pub_date')
+
+        paginator = Paginator(main_posts, 4)  # Show 10 posts per page
+        try:
+            page = paginator.page(page_num)
+        except EmptyPage:
+            page = paginator.page(1)
+        print(page.object_list)
+        print(Post.objects.all().order_by('-pub_date'))
+        context.update({
+            'top_3_posts': top_3_posts,
+            'page': page
+        })
+        return context
+
+
+"""     OLD LOGIC
         # 3 top posts
         top_3posts = Post.objects.all().order_by('-likes')[:3]
 
@@ -29,17 +51,18 @@ class HomeView(ListView):
         staff = Post.objects.order_by('-pub_date')
         p = Paginator(staff, 10)
         page_num = self.request.GET.get('page', 1)
-        print(p.num_pages)
         try:
             page = p.page(page_num)
         except EmptyPage:
             page = p.page(1)
+        if page.number == 1:
+            page = p.page(page_num)
+            print(page.object_list)
 
         context.update({
             'top_3posts': top_3posts,
             'page': page,
-        })
-        return context
+        })"""
 
 
 class PostDetailView(HitCountDetailView):

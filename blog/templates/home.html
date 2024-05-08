@@ -2,17 +2,6 @@
 {% load static %}
 
 {% block content %}
-    {#    <h1>Posts</h1>#}
-    {#    <ul>#}
-    {#        {% for post in object_list %}#}
-    {#            <li><a href="{% url 'post-detail-url' post.slug %}">#}
-    {#                {{ post.title }}</a> - {{ post.author.first_name }} {{ post.author.last_name }} - (<a#}
-    {#                    href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a>)<br/>#}
-    {#                {{ post.short_description | truncatechars:100|safe }}<br/>#}
-    {#                {{ post.body | truncatechars:70|safe }}<br/>#}
-    {#            </li>#}
-    {#        {% endfor %}#}
-    {#    </ul>#}
 
     <section id="bricks">
 
@@ -28,7 +17,7 @@
                             <div id="featured-post-slider" class="flexslider">
                                 <!-- TOP 3 POSTS -->
                                 <ul class="slides">
-                                    {% for top in top_3posts %}
+                                    {% for top in top_3_posts %}
                                         <li>
                                             <div class="featured-post-slide">
 
