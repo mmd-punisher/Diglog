@@ -1,25 +1,6 @@
 {% extends 'landing/_layout.html' %}
 
 {% load static %}
-{#{% block content %}#}
-{#    {% if searched %}#}
-{#        <h1>Search For {{ searched }}</h1>#}
-{#        {% for post in posts %}#}
-{#            <ul>#}
-{#                <li><a href="{% url 'post-detail-url' post.slug %}">#}
-{#                    {{ post.title }}</a> - {{ post.author.first_name }} {{ post.author.last_name }} - (<a#}
-{#                        href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a>)<br/>#}
-{#                    {{ post.short_description | truncatechars:100|safe }}<br/>#}
-{#                </li>#}
-{#            </ul>#}
-{#        {% endfor %}#}
-{#        <a href="{% url 'home-url' %}" class="btn btn-secondary">Back</a>#}
-{##}
-{#    {% else %}#}
-{#        Nothing to search!!!#}
-{#    {% endif %}#}
-{#{% endblock %}#}
-
 
 {% block content %}
     <section id="page-header">

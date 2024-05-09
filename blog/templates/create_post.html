@@ -8,13 +8,18 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <section id="content-wrap" class="site-page">
+        <section id="page-header">
+            <div class="row current-cat">
+                <div class="col-full">
+                    <h1>Create Your Post</h1>
+                </div>
+            </div>
+        </section>
+        {#        <section id="content-wrap" class="site-page">#}
+        <section id="bricks" class="with-top-sep">
             <div class="row">
                 <div class="col-twelve">
                     <div class="primary-content">
-                        <h1>Create Your Post</h1>
-                        <br/>
-                        <br/>
                         <div class="form-field">
                             <form method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
@@ -34,52 +39,52 @@
             </div>
         </section>
     {% else %}
-{#        <button class="border-el-btn access_denied" style="#}
-{##}
-{##}
-{#  color: red;#}
-{#  outline: none;#}
-{#  border: none;#}
-{#  font-size: 17px;#}
-{#  padding: 1em 2em;#}
-{#  position: relative;#}
-{#  background: none;#}
-{#  cursor: pointer;#}
-{#  transform: scale(.98);#}
-{#  box-shadow: .1px .1px 2px red;#}
-{#  position: absolute;#}
-{#  background: red;#}
-{#  transition: .5s;#}
-{#  box-shadow: 1px 1px 20px red;#}
-{#  top: 0;#}
-{#  left: 0;#}
-{#  width: 3px;#}
-{#  height: 30%;#}
-{#  height: 100%;#}
-{#  top: 0;#}
-{#  left: 0;#}
-{#  width: 15%;#}
-{#  height: 3px;#}
-{#  width: 100%;#}
-{#  bottom: 0;#}
-{#  right: 0;#}
-{#  width: 3px;#}
-{#  height: 30%;#}
-{#  height: 100%;#}
-{#  bottom: 0;#}
-{#  right: 0;#}
-{#  width: 15%;#}
-{#  height: 3px;#}
-{#  width: 100%;#}
-{##}
-{#">#}
-{#            Access Denied#}
-{#            <span class="b1"></span>#}
-{#            <span class="b2"></span>#}
-{#            <span class="b3"></span>#}
-{#            <span class="b4"></span>#}
-{#        </button>#}
-                <img src="{% static 'images/access-denied.png' %}" alt="Access Denied">
+        {#        <button class="border-el-btn access_denied" style="#}
+        {##}
+        {##}
+        {#  color: red;#}
+        {#  outline: none;#}
+        {#  border: none;#}
+        {#  font-size: 17px;#}
+        {#  padding: 1em 2em;#}
+        {#  position: relative;#}
+        {#  background: none;#}
+        {#  cursor: pointer;#}
+        {#  transform: scale(.98);#}
+        {#  box-shadow: .1px .1px 2px red;#}
+        {#  position: absolute;#}
+        {#  background: red;#}
+        {#  transition: .5s;#}
+        {#  box-shadow: 1px 1px 20px red;#}
+        {#  top: 0;#}
+        {#  left: 0;#}
+        {#  width: 3px;#}
+        {#  height: 30%;#}
+        {#  height: 100%;#}
+        {#  top: 0;#}
+        {#  left: 0;#}
+        {#  width: 15%;#}
+        {#  height: 3px;#}
+        {#  width: 100%;#}
+        {#  bottom: 0;#}
+        {#  right: 0;#}
+        {#  width: 3px;#}
+        {#  height: 30%;#}
+        {#  height: 100%;#}
+        {#  bottom: 0;#}
+        {#  right: 0;#}
+        {#  width: 15%;#}
+        {#  height: 3px;#}
+        {#  width: 100%;#}
+        {##}
+        {#">#}
+        {#            Access Denied#}
+        {#            <span class="b1"></span>#}
+        {#            <span class="b2"></span>#}
+        {#            <span class="b3"></span>#}
+        {#            <span class="b4"></span>#}
+        {#        </button>#}
+        <img src="{% static 'images/access-denied.png' %}" alt="Access Denied">
     {% endif %}
 
 {% endblock %}

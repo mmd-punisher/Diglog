@@ -1,4 +1,5 @@
-{% extends 'base.html' %}
+{% extends 'landing/_layout.html' %}
+
 {% load static %}
 {% block title %}
     Delete {{ post.title }}
@@ -7,24 +8,37 @@
 {% block content %}
     {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
-            <h1>Delete post: {{ post.title }}</h1>
-            <br/>
-            <br/>
-            <div class="form-group">
-                <form method="POST">
-                    {% csrf_token %}
-                    <strong>Are you sure you want to delete {{ post.title }} post?!</strong>
-                    <br/>
-                    <br/>
-                    <button class="btn btn-secondary">Delete post</button>
-                    <a href="{% url 'post-detail-url' post.slug %}" class="btn btn-secondary">Back</a>
-                </form>
-            </div>
+            <section id="page-header">
+                <div class="row current-cat">
+                    <div class="col-full">
+                        <h1>Delete post: {{ post.title }}</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section id="bricks" class="with-top-sep">
+                <div class="row">
+                    <div class="col-twelve">
+                        <div class="primary-content">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <p>Are you sure you want to delete <strong>{{ post.title }}</strong> post?!</p>
+                                <button class="btn">Delete post</button>
+                                <p class="tags">
+                                    <a href="{% url 'post-detail-url' post.slug %}" class="btn btn-secondary">Back</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
         {% else %}
             You are not allowed to DELETE someone's post :/
         {% endif %}
     {% else %}
         <img src="{% static 'images/access-denied.png' %}" alt="Access Denied">
     {% endif %}
+
+
 
 {% endblock %}
