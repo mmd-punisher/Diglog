@@ -1,4 +1,5 @@
 {% load render_partial %}
+{% load static %}
 
 {% block extrahead %}
     <script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
@@ -26,6 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     {% include 'landing/header_references.html' %}
+    <link rel="icon" href="{% static 'images/feather-pen (1).png' %}">
 
 </head>
 

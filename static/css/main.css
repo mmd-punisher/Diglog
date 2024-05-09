@@ -1599,11 +1599,11 @@ header .logo a {
 	padding: 0;
 	outline: 0;
 	border: none;
-	width: 60px;
-	height: 60px;
-	background: url("../images/logo.png") no-repeat center;
-	background-size: 60px 60px;
-	font: 0/0 a;
+	width: 300px;
+	height: 70px;
+	background: url("../images/cover.png") no-repeat center;
+	background-size: 300px;
+	/*font: 12;*/
 	text-shadow: none;
 	color: transparent;
 	-moz-transition: all 0.5s ease-in-out;

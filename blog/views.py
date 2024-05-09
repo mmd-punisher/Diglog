@@ -21,7 +21,31 @@ class HomeView(ListView):
         category_menu = Category.objects.all()
         context = super(HomeView, self).get_context_data(**kwargs)
         context['category_menu'] = category_menu
+
         top_3_posts = Post.objects.all().order_by('-likes')[:3]
+        page_num = self.request.GET.get('page', 1)
+
+        if page_num == '1' or page_num == 1:
+            main_posts = Post.objects.exclude(id__in=top_3_posts.values_list('id', flat=True)).order_by('-pub_date')
+        else:
+            main_posts = Post.objects.order_by('-pub_date')
+
+        paginator = Paginator(main_posts, 10)
+        try:
+            page = paginator.page(page_num)
+        except EmptyPage:
+            page = paginator.page(1)
+
+        context.update({
+            'top_3_posts': top_3_posts,
+            'page': page
+        })
+
+        return context
+
+
+"""
+SECOND LOGIC
 
         page_num = self.request.GET.get('page', 1)
         if page_num == '1':
@@ -40,8 +64,24 @@ class HomeView(ListView):
             'top_3_posts': top_3_posts,
             'page': page
         })
-        return context
 
+"""
+
+"""        top_posts = Post.objects.all().order_by('-likes')[:3]
+        excluded_ids = [post.id for post in top_posts]
+        other_posts = Post.objects.exclude(id__in=excluded_ids).order_by('-pub_date')
+
+        # Set up pagination
+        paginator = Paginator(other_posts, 5)  # Adjust the number to display per page as needed
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        print(top_posts)
+        print(other_posts)
+        context.update({
+            'top_posts': top_posts,
+            'page_obj': page_obj}
+        )"""
 
 """     OLD LOGIC
         # 3 top posts
