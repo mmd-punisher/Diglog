@@ -53,5 +53,5 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(
                 attrs={'class': 'full-width', 'value': '', 'id': 'name_field', 'type': 'hidden'}),
-            'body': forms.Textarea(attrs={'class': 'form-control'})
+            'body': forms.Textarea(attrs={'class': 'full-width'})
         }

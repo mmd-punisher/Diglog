@@ -36,7 +36,6 @@
 
                     <li class="has-children">
                         {% if user.profile.slug %}
-
                             <a href="{% url 'show-profile-url' user.profile.slug %}"
                                title="">{{ user.first_name }} {{ user.last_name }}</a>
                         {% else %}
@@ -57,10 +56,15 @@
                             </ul>
                         {% endif %}
                         {% else %}
-                    <li><a href="{% url 'register-url' %}" title="">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}" title="">Login</a></li>
+                    <li class="{% if request.path == '/members/register/' or request.path == '/members/login/' %} has-children current {% else %} has-children {% endif %}">
+                    <a href="#" title="">Account</a>
+                    <ul class="sub-menu">
+                        <li><a href="{% url 'register-url' %}" title="">Sign Up</a></li>
+                        <li><a href="{% url 'login' %}" title="">Login</a></li>
+                    </ul>
                 {% endif %}
-                <li><a href="{% url 'about-us-url' %}" title="">About Us</a></li>
+                <li class="{% if request.path == '/posts/about-us/' %} current {% else %} {% endif %}"><a
+                        href="{% url 'about-us-url' %}" title="">About Us</a></li>
 
             </ul>
         </nav> <!-- end main-nav-wrap -->
