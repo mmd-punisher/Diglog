@@ -11,9 +11,9 @@
 
         <nav id="main-nav-wrap">
             <ul class="main-navigation sf-menu">
-                <li class="{% if request.path == '/posts/' %} current {% endif %}"><a href="{% url 'home-url' %}"
+                <li class="{% if request.path == '/DigLog/' %} current {% endif %}"><a href="{% url 'home-url' %}"
                                                                                       title="">Home</a></li>
-                <li class="{% if request.path == '/posts/categories/' %} has-children current {% else %} has-children {% endif %}">
+                <li class="{% if request.path == '/DigLog/categories/' %} has-children current {% else %} has-children {% endif %}">
 
                     <a href="{% url 'category-menu-url' %}" title="">Categories</a>
                     <ul class="sub-menu">
@@ -25,7 +25,7 @@
                     </ul>
                 </li>
                 {% if user.is_authenticated %}
-                    <li class="{% if request.path == '/posts/create/' %} has-children current {% else %} has-children {% endif %}">
+                    <li class="{% if request.path == '/DigLog/create/' %} has-children current {% else %} has-children {% endif %}">
                         <a href="{% url 'create-post-url' %}" title="">Create Post</a></li>
 
                     {#                    <svg xmlns="http://www.w3.org/2000/svg" style=" height: 27px; width: 27px" viewBox="0 0 32 32"#}
@@ -63,7 +63,7 @@
                         <li><a href="{% url 'login' %}" title="">Login</a></li>
                     </ul>
                 {% endif %}
-                <li class="{% if request.path == '/posts/about-us/' %} current {% else %} {% endif %}"><a
+                <li class="{% if request.path == '/DigLog/about-us/' %} current {% else %} {% endif %}"><a
                         href="{% url 'about-us-url' %}" title="">About Us</a></li>
 
             </ul>

@@ -179,7 +179,7 @@
 
                             <li class=" date">{{ post.pub_date | date:'F d, Y' }}</li>
 
-                            <li class="cat"><a
+                            <li class="cat">Category: <a
                                     href="{% url 'category-list-url' post.category %}">{{ post.category }}</a></li>
 
                             <li class="cat">
@@ -222,7 +222,7 @@
                         <p class="tags">
                             <a href="{% url 'home-url' %}">Back</a>
                             {% if user.id == post.author.id %}
-                                <a href="{% url 'edit-post-url' post.slug %}">Edite</a>
+                                <a href="{% url 'edit-post-url' post.slug %}">Edit</a>
                                 <a href="{% url 'delete-post-url' post.slug %}">Delete</a>
                             {% endif %}
                         </p>

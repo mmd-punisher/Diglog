@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'landing/_layout.html' %}
 {% load static %}
 
 {% block title %}
@@ -8,20 +8,35 @@
 {% block content %}
     {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
-            <h1>Edit your post</h1>
-            <br/>
-            <br/>
-            <div class="form-group">
-                <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button class="btn btn-outline-info">Save changes</button>
-                    <a href="{% url 'post-detail-url' post.slug %}" class="btn btn-secondary">Back</a>
-
-                </form>
-            </div>
+            <section id="page-header">
+                <div class="row current-cat">
+                    <div class="col-full">
+                        <h1>Edit your post</h1>
+                    </div>
+                </div>
+            </section>
+            {#        <section id="content-wrap" class="site-page">#}
+            <section id="bricks" class="with-top-sep">
+                <div class="row">
+                    <div class="col-twelve">
+                        <div class="primary-content">
+                            <div class="form-field">
+                                <div class="form-group">
+                                    <form method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {{ form.media }}
+                                        {{ form.as_p }}
+                                        <button class="btn">Save Changes</button>
+                                        <button class="btn" href="{% url 'post-detail-url' post.slug %}">Back</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         {% else %}
-            You are not allowed to EDIT someone's post :/
+            <p class="tags">You are not allowed to EDIT someone's post :///</p>
         {% endif %}
     {% else %}
         <img src="{% static 'images/access-denied.png' %}" alt="Access Denied">

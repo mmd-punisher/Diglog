@@ -13,6 +13,9 @@ from .category_adder import display_choices
 class PostForm(forms.ModelForm):
     body = forms.CharField(widget=CKEditorWidget())
 
+    # header_image = forms.ImageField(label='Header Image', required=False,
+    #                                 error_messages={'invalid': "Image files only"}, widget=forms.FileInput)
+
     class Meta:
         model = Post
         fields = ['title', 'author', 'category', 'short_description', 'body', 'header_image']
@@ -26,6 +29,8 @@ class PostForm(forms.ModelForm):
                 'placeholder': 'Write a short description about your post, this text will showed up on main preview.',
                 'rows': 3}),
             'body': forms.Textarea(attrs={'class': 'full-width', 'placeholder': 'Text here'}),
+            # 'header_image': forms.ImageField(label='Header Image', required=False,
+            #                                  error_messages={'invalid': "Image files only"}, widget=forms.FileInput)
         }
 
 

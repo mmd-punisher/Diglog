@@ -8,6 +8,7 @@ django-ckeditor = "*"
 pillow = "*"
 django-hitcount = "*"
 django-render-partial = "*"
+django-debug-toolbar = "*"
 
 [dev-packages]
 
