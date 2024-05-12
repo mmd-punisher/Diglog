@@ -181,10 +181,6 @@ def like_view(request, slug):
     return HttpResponseRedirect(reverse('post-detail-url', args=[str(slug)]))
 
 
-# def user_profile(request, username):
-#     the_user = Profile.objects.get(username=request.user.username)
-#     return render()
-
 class AddCommentView(CreateView):
     model = Comment
     template_name = 'add_comment.html'
