@@ -1,47 +1,70 @@
-{% extends 'base.html' %}
+{% extends 'landing/_layout.html' %}
 {% load static %}
 {% block title %}
     {{ the_user.user.first_name }} {{ the_user.user.last_name }}
 {% endblock %}
 
 {% block content %}
-    <div class="card mb-3">
-        <div class="row g-0">
-            <div class="col-md-2">
-                {% if the_user.profile_pic %}
-                    <img src="{{ the_user.profile_pic.url }}" class="img-fluid rounded-start"
-                         alt="profile pic">
-                {% else %}
-                    <img src="{% static 'images/ProfileDefault.webp' %}" class="img-fluid rounded-start"
-                         alt="profile pic">
-                {% endif %}
-            </div>
-            <div class="col-md-10">
-                <div class="card-body">
-                    <h5 class="card-title">{{ the_user.user.first_name }} {{ the_user.user.last_name }}</h5>
-                    <p class="card-text"><small class="text-body-secondary">
-                        {% if the_user.website_link %}
-                            <a target="_blank" href="{{ the_user.website_link }}">Website</a>
-                        {% endif %}
-                        {% if the_user.instagram_link %}
-                            | <a target="_blank" href="{{ the_user.instagram_link }}">Instagram</a>
-                        {% endif %}
-
-                        {% if the_user.twitter_link %}
-                            |<a target="_blank" href="{{ the_user.twitter_link }}">Twitter</a>
-                        {% endif %}
-                    </small>
-                    </p>
-                    <p class="card-text">{{ the_user.bio }}</p>
-                </div>
+    <section id="page-header">
+        <div class="row current-cat">
+            <div class="col-full">
+                <h1>{{ the_user.user.first_name }}'s Profile</h1>
             </div>
         </div>
-    </div>
-    {% for post in user_posts %}
-        <li><a href="{% url 'post-detail-url' post.slug %}">
-            {{ post.title }}</a> - {{ post.author.first_name }} {{ post.author.last_name }} - (<a
-                href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a>)<br/>
-            {{ post.short_description | truncatechars:100|safe }}<br/>
-        </li>
-    {% endfor %}
+    </section>
+
+
+
+
+
+{#    <section id="bricks" class="with-top-sep">#}
+{#        <div class="row current-cat">#}
+{#            <div class="col-full">#}
+{#                <div class="col-md-2">#}
+{##}
+{#                    {% if the_user.profile_pic %}#}
+{#                        <img src="{{ the_user.profile_pic.url }}" class="img-fluid rounded-start"#}
+{#                             alt="profile pic">#}
+{#                        <div class="avatar">#}
+                            {#                            <img width="150" height="150" class="avatar" src="{{ the_user.profile_pic.url }}"#}
+                            {#                                 alt="profile pic">#}
+{#                        </div>#}
+{##}
+{#                    {% else %}#}
+{#                        <img src="{% static 'images/ProfileDefault.webp' %}" class="img-fluid rounded-start"#}
+{#                             alt="profile pic">#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#                <div class="row g-0">#}
+{##}
+{#                    <div class="col-md-10">#}
+{#                        <div class="card-body">#}
+{#                            <h5 class="card-title">{{ the_user.user.first_name }} {{ the_user.user.last_name }}</h5>#}
+{#                            <p class="card-text"><small class="text-body-secondary">#}
+{#                                {% if the_user.website_link %}#}
+{#                                    <a target="_blank" href="{{ the_user.website_link }}">Website</a>#}
+{#                                {% endif %}#}
+{#                                {% if the_user.instagram_link %}#}
+{#                                    | <a target="_blank" href="{{ the_user.instagram_link }}">Instagram</a>#}
+{#                                {% endif %}#}
+{##}
+{#                                {% if the_user.twitter_link %}#}
+{#                                    |<a target="_blank" href="{{ the_user.twitter_link }}">Twitter</a>#}
+{#                                {% endif %}#}
+{#                            </small>#}
+{#                            </p>#}
+{#                            <p class="card-text">{{ the_user.bio }}</p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                {% for post in user_posts %}#}
+{#                    <li><a href="{% url 'post-detail-url' post.slug %}">#}
+{#                        {{ post.title }}</a> - {{ post.author.first_name }} {{ post.author.last_name }} - (<a#}
+{#                            href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a>)<br/>#}
+{#                        {{ post.short_description | truncatechars:100|safe }}<br/>#}
+{#                    </li>#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
 {% endblock %}

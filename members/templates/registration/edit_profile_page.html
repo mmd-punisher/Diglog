@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'landing/_layout.html' %}
 {% load static %}
 
 {% block title %}
@@ -8,18 +8,32 @@
 {% block content %}
     {% if user.is_authenticated %}
         {% if user.id == profile.user.id %}
-            <h1>Edit Profile Page</h1>
-            <br/>
-            <br/>
-            <div class="form-group">
-                <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button class="btn btn-secondary">Update Profile Page</button>
-                </form>
-            </div>
+            <section id="page-header">
+                <div class="row current-cat">
+                    <div class="col-full">
+                        <h1>Edit Profile Page</h1>
+                    </div>
+                </div>
+            </section>
+            <section id="bricks" class="with-top-sep">
+                <div class="row current-cat">
+                    <div class="col-full">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class="btn full-width">Update Profile Page</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
         {% else %}
-            You are not allowed to CHANGE someone's profile :/
+            <div class="row current-cat">
+                <div class="col-full">
+                    <h3>
+                        You are not allowed to CHANGE someone's profile :/
+                    </h3>
+                </div>
+            </div>
         {% endif %}
     {% else %}
         <img src="{% static 'images/access-denied.png' %}" alt="Access Denied">
