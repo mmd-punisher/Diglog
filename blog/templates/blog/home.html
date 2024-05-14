@@ -1,0 +1,135 @@
+{% extends '_layout.html' %}
+{% load static %}
+
+{% block title %}
+    Diglog
+{% endblock %}
+
+{% block content %}
+
+    <section id="bricks">
+        <div class="row masonry">
+            <!-- brick-wrapper -->
+            <div class="bricks-wrapper">
+
+                <div class="grid-sizer"></div>
+                {% if page.number == 1 %}
+
+                    <div class="brick entry featured-grid animate-this">
+                        <div class="entry-content">
+                            <div id="featured-post-slider" class="flexslider">
+                                <!-- TOP 3 POSTS -->
+                                <ul class="slides">
+                                    {% for top in top_3_posts %}
+                                        <li>
+                                            <div class="featured-post-slide">
+
+                                                <div class="post-background">
+                                                    {% if top.header_image %}
+                                                        <img src="{{ top.header_image.url }}" alt="Header img"
+                                                             style="height: 100%">
+                                                    {% else %}
+                                                        <img src="{% static 'images/post-default.jpg' %}"
+                                                             alt="Header img"
+                                                             style="height: 100%">
+                                                    {% endif %}
+                                                </div>
+                                                <div class="overlay"></div>
+                                                <div class="post-content">
+                                                    <ul class="entry-meta">
+                                                        <li>{{ top.date_updated }}</li>
+                                                        {% if post.author.profile %}
+                                                            <li>
+                                                                <a href="{% url 'show-profile-url' top.author.profile.slug %}">{{ top.author.first_name }} {{ top.author.last_name }}</a>
+                                                            </li>
+                                                        {% else %}
+                                                            <li>
+                                                                <a href="#">{{ top.author.first_name }} {{ top.author.last_name }}</a>
+                                                            </li>
+                                                        {% endif %}
+                                                    </ul>
+                                                    <h1 class="slide-title">
+                                                        <a href="{% url 'post-detail-url' top.slug %}" title="">
+                                                            {{ top.title }}
+                                                        </a>
+                                                    </h1>
+                                                </div>
+
+                                            </div>
+                                        </li> <!-- /slide -->
+                                    {% endfor %}
+                                </ul> <!-- end slides -->
+                            </div> <!-- end featured-post-slider -->
+                        </div> <!-- end entry content -->
+                    </div>
+                {% endif %}
+
+
+                {% for post in page %}
+                    <article class="brick entry format-standard animate-this">
+                        {% if post.header_image %}
+                            <div class="entry-thumb">
+                                <a href="{% url 'post-detail-url' post.slug %}" class="thumb-link">
+                                    <img src="{{ post.header_image.url }}" alt="building">
+                                </a>
+                            </div>
+                        {% else %}
+                            <div class="entry-thumb">
+                                <a href="{% url 'post-detail-url' post.slug %}" class="thumb-link">
+                                    <img src="{% static 'images/post-default.jpg' %}" alt="building">
+                                </a>
+                            </div>
+                        {% endif %}
+
+                        <div class="entry-text">
+                            <div class="entry-header">
+
+                                <div class="entry-meta">
+               			           <span class="cat-links">
+               				          <a href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a> 
+               			           </span>
+                                </div>
+
+                                <h2 class="entry-title"><a
+                                        href="{% url 'post-detail-url' post.slug %}">{{ post.title }}</a>
+                                </h2>
+                                {#                                <small style="color: #2b2b2b">{{ post.author.first_name }} {{ post.author.last_name }}</small>#}
+
+                            </div>
+                            <div class="entry-excerpt">
+                                {{ post.short_description|truncatechars:240 }}
+                            </div>
+                        </div>
+                    </article> <!-- end article -->
+                {% endfor %}
+
+            </div> <!-- end brick-wrapper -->
+
+        </div> <!-- end row -->
+
+        <div class="row">
+
+            <nav class="pagination">
+                {% if page.has_previous %}
+                    <a href="{% url 'home-url' %}?page={{ page.previous_page_number }}"
+                       class="page-numbers next">Prev</a>
+                {% endif %}
+                {% for num_page in page.paginator.page_range %}
+                    {% if page.number == num_page %}
+                        <a class="page-numbers current"
+                           href="{% url 'home-url' %}?page={{ num_page }}">{{ num_page }}</a>
+                    {% else %}
+                        <a class="page-numbers" href="{% url 'home-url' %}?page={{ num_page }}">{{ num_page }}</a>
+                    {% endif %}
+                {% endfor %}
+                {% if page.has_next %}
+                    <a href="{% url 'home-url' %}?page={{ page.next_page_number }}" class="page-numbers next">Next</a>
+                {% endif %}
+            </nav>
+
+        </div>
+
+    </section> <!-- end bricks -->
+
+{% endblock %}
+

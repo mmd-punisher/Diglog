@@ -1,0 +1,31 @@
+{% extends '_layout.html' %}
+{% load static %}
+{% block title %}
+    Edit Settings
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <section id="page-header">
+            <div class="row current-cat">
+                <div class="col-full">
+                    <h1>Edit Settings</h1>
+                </div>
+            </div>
+        </section>
+        <section id="bricks" class="with-top-sep">
+            <div class="row current-cat">
+                <div class="col-full">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn full-width">Update Settings</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    {% else %}
+        <img src="{% static 'images/access-denied.png' %}" alt="Access Denied">
+    {% endif %}
+{% endblock %}

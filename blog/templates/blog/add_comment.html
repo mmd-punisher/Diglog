@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}
+    Comment On Blog
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {{ comments_count }}
+        <h1>Write Your Comment</h1>
+        <br/>
+        <br/>
+        <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-light">Add Comment</button>
+            </form>
+        </div>
+
+    {% else %}
+        <img src="{% static 'images/access-denied.png' %}" alt="Access Denied">
+    {% endif %}
+{#        <script>#}
+{#            var user_name = "{{ user.first_name }} {{ user.last_name }}"#}
+{#            document.getElementById("name_field").value = user_name;#}
+{#        </script>#}
+{% endblock %}

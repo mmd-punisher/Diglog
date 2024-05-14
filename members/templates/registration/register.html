@@ -1,0 +1,25 @@
+{% extends '_layout.html' %}
+{% block title %}
+    Sign Up
+{% endblock %}
+
+{% block content %}
+    <section id="content-wrap" class="site-page">
+        <div class="row current-cat">
+            <div class="col-full">
+                <h1>Register your account</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-twelve">
+                <div class="primary-content">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn full-width">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

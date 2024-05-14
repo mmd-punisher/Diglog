@@ -1,0 +1,40 @@
+{% extends '_layout.html' %}
+{% load static %}
+{% block title %}
+    Create Your Profile
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if not user.profile.slug %}
+            <section id="page-header">
+                <div class="row current-cat">
+                    <div class="col-full">
+                        <h1>Hello {{ user.first_name }}, Welcome to Create Profile Page</h1>
+                    </div>
+                </div>
+            </section>
+            <section id="bricks" class="with-top-sep">
+                <div class="row current-cat">
+                    <div class="col-full">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class="btn full-width">Create Profile Page</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        {% else %}
+            <div class="row current-cat">
+                <div class="col-full">
+                    <br/>
+                    <h3>You already created your profile page</h3>
+                </div>
+            </div>
+        {% endif %}
+    {% else %}
+        <img src="{% static 'images/access-denied.png' %}" alt="Access Denied">
+    {% endif %}
+
+{% endblock %}

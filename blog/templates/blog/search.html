@@ -1,0 +1,63 @@
+{% extends '_layout.html' %}
+
+{% load static %}
+
+{% block content %}
+    <section id="page-header">
+        <div class="row current-cat">
+            <div class="col-full">
+                <h1>Search Result for: {{ searched }}</h1>
+            </div>
+        </div>
+    </section>
+    <section id="bricks">
+        <div class="row masonry">
+            <!-- brick-wrapper -->
+            <div class="bricks-wrapper">
+                <div class="grid-sizer"></div>
+
+                {% if searched %}
+
+                    {% for post in posts %}
+                        <article class="brick entry format-standard animate-this">
+                            {% if post.header_image %}
+                                <div class="entry-thumb">
+                                    <a href="{% url 'post-detail-url' post.slug %}" class="thumb-link">
+                                        <img src="{{ post.header_image.url }}" alt="building">
+                                    </a>
+                                </div>
+                            {% else %}
+                                <div class="entry-thumb">
+                                    <a href="{% url 'post-detail-url' post.slug %}" class="thumb-link">
+                                        <img src="{% static 'images/post-default.jpg' %}" alt="building">
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                            <div class="entry-text">
+                                <div class="entry-header">
+
+                                    <div class="entry-meta">
+               			<span class="cat-links">
+               				<a href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a> 
+               			</span>
+                                    </div>
+
+                                    <h1 class="entry-title"><a
+                                            href="{% url 'post-detail-url' post.slug %}">{{ post.title }}</a>
+                                    </h1>
+
+                                </div>
+                                <div class="entry-excerpt">
+                                    {{ post.short_description }}
+                                </div>
+                            </div>
+                        </article> <!-- end article -->
+                    {% endfor %}
+                {% else %}
+                    Nothing founded!!
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

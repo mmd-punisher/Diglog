@@ -1,0 +1,41 @@
+{% extends '_layout.html' %}
+{% load static %}
+
+{% block title %}
+    Edit Profile Page
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.id == profile.user.id %}
+            <section id="page-header">
+                <div class="row current-cat">
+                    <div class="col-full">
+                        <h1>Edit Profile Page</h1>
+                    </div>
+                </div>
+            </section>
+            <section id="bricks" class="with-top-sep">
+                <div class="row current-cat">
+                    <div class="col-full">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class="btn full-width">Update Profile Page</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        {% else %}
+            <div class="row current-cat">
+                <div class="col-full">
+                    <h3>
+                        You are not allowed to CHANGE someone's profile :/
+                    </h3>
+                </div>
+            </div>
+        {% endif %}
+    {% else %}
+        <img src="{% static 'images/access-denied.png' %}" alt="Access Denied">
+    {% endif %}
+{% endblock %}

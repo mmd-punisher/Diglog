@@ -1,0 +1,71 @@
+{% extends '_layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{ category_name }} posts
+{% endblock %}
+
+{% block content %}
+    {% if category_post %}
+        <section id="page-header">
+            <div class="row current-cat">
+                <div class="col-full">
+                    <h1>Category: {{ category_name }}</h1>
+                </div>
+            </div>
+        </section>
+
+        <section id="bricks" class="with-top-sep">
+            <div class="row masonry">
+                <div class="bricks-wrapper">
+                    <div class="grid-sizer"></div>
+                    {% for post in category_post %}
+                        <article class="brick entry format-standard animate-this">
+                            {% if post.header_image %}
+                                <div class="entry-thumb">
+                                    <a href="{% url 'post-detail-url' post.slug %}" class="thumb-link">
+                                        <img src="{{ post.header_image.url }}" alt="building">
+                                    </a>
+                                </div>
+                            {% else %}
+                                <div class="entry-thumb">
+                                    <a href="{% url 'post-detail-url' post.slug %}" class="thumb-link">
+                                        <img src="{% static 'images/post-default.jpg' %}" alt="building">
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                            <div class="entry-text">
+                                <div class="entry-header">
+
+                                    <div class="entry-meta">
+               			           <span class="cat-links">
+               				          <a href="{% url 'category-list-url' post.category|slugify %}">{{ post.category }}</a> 
+               			           </span>
+                                    </div>
+
+                                    <h2 class="entry-title"><a
+                                            href="{% url 'post-detail-url' post.slug %}">{{ post.title }}</a>
+                                    </h2>
+
+                                </div>
+                                <div class="entry-excerpt">
+                                    {{ post.short_description|truncatechars:240 }}
+                                </div>
+                            </div>
+                        </article> <!-- end article -->
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <section id="page-header">
+            <div class="row current-cat">
+                <div class="col-full">
+                    <h1>There is no post with {{ category_name }} category</h1>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends '_layout.html' %}
+
+{% block title %}
+    All Categories
+{% endblock %}
+
+{% block content %}
+
+    <section id="page-header">
+        <div class="row current-cat">
+            <div class="col-full">
+                <h1>Categories menu</h1>
+            </div>
+        </div>
+    </section>
+    <section id="bricks" class="with-top-sep">
+        <div class="row current-cat">
+            <div class="col-full">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Posts Count</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for category, count in categories_menu %}
+                        <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td><a href="{% url 'category-list-url' category %}"> {{ category }}</a>
+                            </td>
+                            <td>{{ count }}</td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+                <ul>
+
+                </ul>
+            </div>
+            {% if user.is_authenticated %}
+                <p>If the category you want, is not in the list, you can <a href="{% url 'add-category-url' %}" title="">Add a Category</a>.</p>
+            {% endif %}
+        </div>
+
+
+    </section>
+{% endblock %}
