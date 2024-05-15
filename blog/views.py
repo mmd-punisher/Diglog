@@ -50,6 +50,39 @@ class PostDetailView(HitCountDetailView):
     count_hit = True
 
     def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = self.get_object()
+        total_likes = post.total_likes()
+        liked = post.likes.filter(id=self.request.user.id).exists()
+        comment_form = CommentForm()
+
+        context.update({
+            'total_likes': total_likes,
+            'liked': liked,
+            'comment_form': comment_form,
+            'comments': post.comment_set.all()
+        })
+
+        return context
+
+    def post(self, request, *args, **kwargs):
+        post = self.get_object()
+        comment_form = CommentForm(data=request.POST)
+
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.author = request.user
+            new_comment.post = post  # Make sure to link the comment to the post
+            new_comment.save()
+            return redirect('post-detail-url', slug=post.slug)
+
+        # If the form is not valid, re-render the detail view with form errors
+        context = self.get_context_data()
+        context['comment_form'] = comment_form
+        return self.render_to_response(context)
+
+
+"""    def get_context_data(self, **kwargs):
         post = get_object_or_404(Post, slug=self.kwargs['slug'])
         total_likes = post.total_likes()
         liked = False
@@ -63,7 +96,6 @@ class PostDetailView(HitCountDetailView):
             if comment_form.is_valid():
                 new_comment = comment_form.save(commit=False)
                 new_comment.author = self.request.user
-                new_comment.post = post
                 new_comment.save()
                 return redirect('post-detail-url', slug=self.kwargs['slug'])
         else:
@@ -80,6 +112,7 @@ class PostDetailView(HitCountDetailView):
         })
 
         return context
+"""
 
 
 class PostCreateView(CreateView):

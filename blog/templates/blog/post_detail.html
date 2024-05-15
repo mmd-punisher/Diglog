@@ -171,7 +171,11 @@
                                     {% endif %}
                                     <div class="comment-content">
                                         <div class="comment-info">
-                                            <cite>{{ comment.author }}</cite>
+                                            {% if comment.author.first_name %}
+                                                <cite>{{ comment.author.first_name }} {{ comment.author.last_name }}</cite>
+                                            {% else %}
+                                                <cite>{{ comment.author }}</cite>
+                                            {% endif %}
                                             <div class="comment-meta">
                                                 <time class="comment-time"
                                                       datetime="2014-07-12T23:05">{{ comment.pub_date | date:'F d, Y' }}
@@ -190,7 +194,7 @@
                             {% endfor %}
                         {% endif %}
                         {% if user.is_authenticated %}
-                            <form method="post">
+                            <form method="POST">
                                 {% csrf_token %}
                                 {{ comment_form.as_p }}
                                 <button type="submit">Add Comment</button>
