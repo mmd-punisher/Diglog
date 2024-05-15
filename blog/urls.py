@@ -12,7 +12,6 @@ urlpatterns = [
     path('categories/', views.category_menu, name='category-menu-url'),
     path('accounts/logout/', views.logout_view, name='logout-url'),
     path('like/<slug:slug>/', views.like_view, name='like-post-url'),
-    path('post/<int:pk>/comment/', views.AddCommentView.as_view(), name='add-comment-url'),
     path('search/', views.search, name='search-url'),
     path('about-us/', views.about, name='about-us-url'),
 ]

@@ -114,8 +114,7 @@
                                         </li>
                                     {% endif %}
                                     {% if user.id == post.author.id %}
-                                        <li><a target="_blank"
-                                               href="{% url 'edit-profile-page-url' post.author.username %}">Edit Your
+                                        <li><a href="{% url 'edit-profile-page-url' post.author.username %}">Edit Your
                                             Profile</a>
                                         </li>
                                     {% endif %}
@@ -199,8 +198,6 @@
                                 {{ comment_form.as_p }}
                                 <button type="submit">Add Comment</button>
                             </form>
-                            {#                            <a href="{% url 'add-comment-url' post.pk %}">Add New#}
-                            {#                                Comment!</a>#}
                         {% endif %}
 
                     </ol> <!-- Commentlist End -->

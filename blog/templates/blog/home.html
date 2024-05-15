@@ -38,7 +38,7 @@
                                                 <div class="post-content">
                                                     <ul class="entry-meta">
                                                         <li>{{ top.date_updated }}</li>
-                                                        {% if post.author.profile %}
+                                                        {% if top.author.profile %}
                                                             <li>
                                                                 <a href="{% url 'show-profile-url' top.author.profile.slug %}">{{ top.author.first_name }} {{ top.author.last_name }}</a>
                                                             </li>
@@ -54,7 +54,6 @@
                                                         </a>
                                                     </h1>
                                                 </div>
-
                                             </div>
                                         </li> <!-- /slide -->
                                     {% endfor %}

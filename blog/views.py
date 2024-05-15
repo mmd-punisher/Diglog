@@ -174,16 +174,6 @@ def like_view(request, slug):
     return HttpResponseRedirect(reverse('post-detail-url', args=[str(slug)]))
 
 
-class AddCommentView(CreateView):
-    model = Comment
-    template_name = 'blog/add_comment.html'
-    form_class = CommentForm
-    success_url = reverse_lazy('home-url')
-
-    def form_valid(self, form):
-        form.instance.post_id = self.kwargs['pk']
-        return super().form_valid(form)
-
 
 def search(request):
     if request.method == 'POST':
