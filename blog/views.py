@@ -50,14 +50,35 @@ class PostDetailView(HitCountDetailView):
     count_hit = True
 
     def get_context_data(self, **kwargs):
-        li = get_object_or_404(Post, slug=self.kwargs['slug'])
-        total_likes = li.total_likes()
+        post = get_object_or_404(Post, slug=self.kwargs['slug'])
+        total_likes = post.total_likes()
         liked = False
-        if li.likes.filter(id=self.request.user.id).exists():
+        if post.likes.filter(id=self.request.user.id).exists():
             liked = True
+
+        comments = post.comment_set.all()
+        new_comment = None
+        if self.request.method == 'POST':
+            comment_form = CommentForm(data=self.request.POST)
+            if comment_form.is_valid():
+                new_comment = comment_form.save(commit=False)
+                new_comment.author = self.request.user
+                new_comment.post = post
+                new_comment.save()
+                return redirect('post-detail-url', slug=self.kwargs['slug'])
+        else:
+            comment_form = CommentForm()
+
         context = super(PostDetailView, self).get_context_data(**kwargs)
-        context["total_likes"] = total_likes
-        context["liked"] = liked
+        context.update({
+            'total_likes': total_likes,
+            'liked': liked,
+            'post': post,
+            'comments': comments,
+            'new_comment': new_comment,
+            'comment_form': comment_form
+        })
+
         return context
 
 

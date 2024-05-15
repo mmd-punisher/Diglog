@@ -142,37 +142,40 @@
             <div id="comments" class="row">
                 <div class="col-full">
 
-                    <h3>{{ post.comments.count }} Comments</h3>
+                    <h3>{{ post.comment_set.count }} Comments</h3>
 
                     <!-- commentlist -->
                     <ol class="commentlist">
 
-                        {% if not post.comments.all %}
+                        {% if not comments %}
                             {% if not user.is_authenticated %}
                                 <p>There is no comments for {{ post.title }} yet! <a href="{% url 'login' %}">Login</a>
                                     to add comments
                                 </p>
-                            {% else %}
-                                <p>There is no comments for {{ post.title }} yet! <a
-                                        href="{% url 'add-comment-url' post.pk %}">Add One
-                                    📨</a>
-                                </p>
                             {% endif %}
                         {% else %}
-                            {% for comment in post.comments.all %}
+                            {% for comment in comments %}
                                 <li class="depth-1">
-                                    {#                                    <div class="avatar">#}
-                                    {#                                        <img width="50" height="50" class="avatar" src="images/avatars/user-01.jpg"#}
-                                    {#                                             alt="">#}
-                                    {#                                    </div>#}
-
+                                    {% if comment.author.profile.profile_pic %}
+                                        <div class="avatar">
+                                            <img width="50px" height="50px" class="avatar"
+                                                 src="{{ comment.author.profile.profile_pic.url }}"
+                                                 alt="">
+                                        </div>
+                                    {% else %}
+                                        <div class="avatar">
+                                            <img width="50px" height="50px" class="avatar"
+                                                 src="{% static 'images/ProfileDefault.webp' %}"
+                                                 alt="">
+                                        </div>
+                                    {% endif %}
                                     <div class="comment-content">
                                         <div class="comment-info">
-                                            <cite>{{ comment.name }}</cite>
+                                            <cite>{{ comment.author }}</cite>
                                             <div class="comment-meta">
                                                 <time class="comment-time"
-                                                      datetime="2014-07-12T23:05">{{ comment.date | date:'F d, Y' }}
-                                                    @ {{ comment.date | date:'h:m' }}
+                                                      datetime="2014-07-12T23:05">{{ comment.pub_date | date:'F d, Y' }}
+                                                    @ {{ comment.pub_date | date:'h:m' }}
                                                 </time>
                                                 {#                                        <span class="sep">/</span><a class="reply" href="#">Reply</a>#}
                                             </div>
@@ -187,8 +190,13 @@
                             {% endfor %}
                         {% endif %}
                         {% if user.is_authenticated %}
-                            <a href="{% url 'add-comment-url' post.pk %}">Add New
-                                Comment!</a>
+                            <form method="post">
+                                {% csrf_token %}
+                                {{ comment_form.as_p }}
+                                <button type="submit">Add Comment</button>
+                            </form>
+                            {#                            <a href="{% url 'add-comment-url' post.pk %}">Add New#}
+                            {#                                Comment!</a>#}
                         {% endif %}
 
                     </ol> <!-- Commentlist End -->
