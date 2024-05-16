@@ -57,7 +57,7 @@ body {
     margin: 10px 5px;
     text-decoration: none;
     color: #007bff;
-    border: 1px solid #007bff;
+    /*border: 1px solid #007bff;*/
     padding: 5px 10px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
@@ -154,13 +154,13 @@ body {
 
 .wrapper .icon:hover span,
 .wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  /*text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);*/
 }
 
-.wrapper .facebook:hover,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip::before {
-  background: #1877f2;
+.wrapper .website:hover,
+.wrapper .website:hover .tooltip,
+.wrapper .website:hover .tooltip::before {
+  background: #885ae1;
   color: #fff;
 }
 
@@ -177,8 +177,6 @@ body {
   background: #e4405f;
   color: #fff;
 }
-
-
 
 
 .posts-container {
