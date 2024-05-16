@@ -307,10 +307,20 @@
                         {% else %}
                             {% for comment in post.comments.all %}
                                 <li class="depth-1">
-                                    {#                                    <div class="avatar">#}
-                                    {#                                        <img width="50" height="50" class="avatar" src="images/avatars/user-01.jpg"#}
-                                    {#                                             alt="">#}
-                                    {#                                    </div>#}
+{#                                    {% if current_user.profile_pic %}#}
+{#                                        <div class="avatar">#}
+{#                                            <img width="50" height="50" class="avatar"#}
+{#                                                 src="{{ current_user.profile_pic.url }}"#}
+{#                                                 alt="">#}
+{#                                        </div>#}
+{#                                    {% else %}#}
+                                        <div class="avatar">
+
+                                            <img src="{% static 'images/ProfileDefault.webp' %}"
+                                                 class="img-fluid rounded-start"
+                                                 alt="profile pic">
+                                        </div>
+{#                                    {% endif %}#}
 
                                     <div class="comment-content">
                                         <div class="comment-info">

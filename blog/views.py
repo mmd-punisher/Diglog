@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.core.paginator import Paginator, EmptyPage
 from blog.forms import PostForm, EditForm, CommentForm
-from blog.models import Post, Category, Comment
+from blog.models import Post, Category, Comment, Profile
 from hitcount.views import HitCountDetailView
 
 
@@ -117,8 +117,13 @@ class PostDetailView(HitCountDetailView):
         if li.likes.filter(id=self.request.user.id).exists():
             liked = True
         context = super(PostDetailView, self).get_context_data(**kwargs)
+
+        # user_request = self.request.user
+        # current_user = Profile.objects.get(slug=user_request.username)
+
         context["total_likes"] = total_likes
         context["liked"] = liked
+        # context["current_user"] = current_user
         return context
 
 
