@@ -21,21 +21,6 @@ class RegisterForm(UserCreationForm):
 
 
 class EditProfileForm(UserChangeForm):
-    """
-        def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        password = self.fields.get("password")
-        # Little changes here: {self.instance.pk} -> members
-        if password:
-            password.help_text = password.help_text.format(
-                f"../../members/password/"
-            )
-        user_permissions = self.fields.get("user_permissions")
-        if user_permissions:
-            user_permissions.queryset = user_permissions.queryset.select_related(
-                "content_type"
-            )
-    """
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': "full-width"}))
     first_name = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': "full-width"}))
     last_name = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': "full-width"}))

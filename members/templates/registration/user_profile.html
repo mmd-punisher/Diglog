@@ -15,6 +15,7 @@
 
 
                     <div class="profile-header" style="background-image: url('{% static 'images/about-us.jpg' %}');">
+
                         {% if the_user.profile_pic %}
                             <div class="profile-picture">
                                 <img src="{{ the_user.profile_pic.url }}" alt="{{ the_user.user.username }}">
@@ -150,7 +151,7 @@
                 </div>
             </section>
 
-            {% endif %}
+        {% endif %}
 
 
     {% else %}
