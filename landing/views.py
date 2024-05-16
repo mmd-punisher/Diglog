@@ -3,7 +3,6 @@ from blog.models import Category
 
 
 def index(request):
-    # return render(request, 'landing/index_page.html')
     return redirect('home-url')
 
 

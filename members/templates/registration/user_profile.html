@@ -150,27 +150,7 @@
                 </div>
             </section>
 
-
-
-            {#                            <div class="posts-grid">#}
-            {#                                {% for post in user_posts %}#}
-            {#                                    <div class="post-card">#}
-            {#                                        {% if post.header_image %}#}
-            {#                                            <div class="post-image">#}
-            {#                                                <img src="{{ post.header_image.url }}" alt="{{ post.title }}">#}
-            {#                                            </div>#}
-            {#                                        {% endif %}#}
-            {#                                        <div class="post-content">#}
-            {#                                            <h3>{{ post.title }}</h3>#}
-            {#                                            <p>by {{ post.author.first_name }} {{ post.author.last_name }}</p>#}
-            {#                                            <p>{{ post.short_description|truncatewords:20 }}</p>#}
-            {#                                            <p><em>{{ post.date_updated }}</em></p>#}
-            {#                                        </div>#}
-            {#                                    </div>#}
-            {#                                {% endfor %}#}
-            {#                            </div>#}
-            </div>
-        {% endif %}
+            {% endif %}
 
 
     {% else %}

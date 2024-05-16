@@ -2,18 +2,25 @@ from datetime import datetime
 
 from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordChangeView
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.urls import reverse_lazy
 from blog.models import Profile, Post
 from .forms import RegisterForm, EditProfileForm, PasswordChangingForm, ProfilePageForm
+from django.contrib.auth import update_session_auth_hash
 
 
+# form_class = PasswordChangeForm
 class PasswordsChangeView(PasswordChangeView):
-    # form_class = PasswordChangeForm
     form_class = PasswordChangingForm
     success_url = reverse_lazy('password-success-url')
     template_name = 'registration/change_password.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['c_user_id'] = self.request.user.id
+        context['user_id'] = self.kwargs['id']
+        return context
 
 
 def password_success(request):

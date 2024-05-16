@@ -119,7 +119,6 @@ class PostCreateView(CreateView):
     model = Post
     form_class = PostForm
     template_name = 'blog/create_post.html'
-    # fields = ['title', 'author', 'body']
 
 
 class PostUpdateView(UpdateView):

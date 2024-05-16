@@ -2,21 +2,24 @@
 
 {% load static %}
 
+{% block title %}
+    search for {{ searched }}
+{% endblock %}
 {% block content %}
-    <section id="page-header">
-        <div class="row current-cat">
-            <div class="col-full">
-                <h1>Search Result for: {{ searched }}</h1>
+    {% if posts %}
+        <section id="page-header">
+            <div class="row current-cat">
+                <div class="col-full">
+                    <h1>Search Result for: {{ searched }}</h1>
+                </div>
             </div>
-        </div>
-    </section>
-    <section id="bricks">
-        <div class="row masonry">
-            <!-- brick-wrapper -->
-            <div class="bricks-wrapper">
-                <div class="grid-sizer"></div>
+        </section>
+        <section id="bricks">
+            <div class="row masonry">
+                <!-- brick-wrapper -->
+                <div class="bricks-wrapper">
+                    <div class="grid-sizer"></div>
 
-                {% if searched %}
 
                     {% for post in posts %}
                         <article class="brick entry format-standard animate-this">
@@ -54,10 +57,18 @@
                             </div>
                         </article> <!-- end article -->
                     {% endfor %}
-                {% else %}
-                    Nothing founded!!
-                {% endif %}
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% else %}
+        <section id="bricks">
+            <div class="row masonry">
+                <!-- brick-wrapper -->
+                <div class="bricks-wrapper">
+                    <h3>Nothing founded for {{ searched }} 🥲</h3>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
 {% endblock %}
