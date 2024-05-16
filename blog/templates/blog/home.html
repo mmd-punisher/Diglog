@@ -88,9 +88,15 @@
                                         href="{% url 'post-detail-url' post.slug %}">{{ post.title }}</a>
                                 </h2>
                                 <div class="entry-meta">
-               			           <span class="cat-links">
+                                    {% if post.author.profile.slug %}
+                                        <span class="cat-links">
                				          <a href="{% url 'show-profile-url' post.author.profile.slug|slugify %}">{{ post.author.first_name }} {{ post.author.last_name }}</a>
                			           </span>
+                                    {% else %}
+                                        <span class="cat-links">
+               				          <a href="#">{{ post.author.first_name }} {{ post.author.last_name }}</a>
+               			           </span>
+                                    {% endif %}
                                 </div>
 
                             </div>

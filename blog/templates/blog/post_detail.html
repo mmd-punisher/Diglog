@@ -48,6 +48,9 @@
                         </ul>
 
                         <p class="lead">{{ post.body|safe }}</p>
+                        <hr>
+                        <h2>Short Description</h2>
+                        <p class="lead">{{ post.short_description|safe }}</p>
                         <br>
                         <br>
                         <!-- Like -->
@@ -95,7 +98,6 @@
                                 <h4>
                                     <a href="{% url 'show-profile-url' post.author.profile.slug %}">{{ post.author.first_name }} {{ post.author.last_name }}</a>
                                 </h4>
-
                                 <p>{{ post.author.profile.bio|safe }}</p>
 
                                 <ul class="author-social">
@@ -185,7 +187,7 @@
                                         </div>
 
                                         <div class="comment-text">
-                                            <p>{{ comment.body }}</p>
+                                            <p>{{ comment.body|safe }}</p>
                                         </div>
 
                                     </div>
