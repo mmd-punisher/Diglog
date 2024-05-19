@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-19T16:37:04.267Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="BLG1VOJY6AdRm5NCqBA0" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-19T16:38:18.129Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="4Imcxdgee9qJGYFfEifO" version="24.4.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="724" dy="360" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -65,6 +65,9 @@
         <mxCell id="NMSrQERmVCEjVIg-8JzD-13" value="&lt;font face=&quot;Vazirmatn&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;ذخیره کاربر در پایگاه داده&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="486" y="155" width="63" height="31" as="geometry" />
         </mxCell>
+        <mxCell id="P2OjYQdWtaf4uAiAOgez-18" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#23445D;dashed=1;dashPattern=1 1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="P2OjYQdWtaf4uAiAOgez-0" target="P2OjYQdWtaf4uAiAOgez-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="P2OjYQdWtaf4uAiAOgez-0" value="&lt;font face=&quot;Vazirmatn&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;نوشتن پست&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="366" y="194" width="74" height="36" as="geometry" />
         </mxCell>
@@ -77,8 +80,14 @@
         <mxCell id="P2OjYQdWtaf4uAiAOgez-5" value="&lt;font face=&quot;Vazirmatn&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;مشاهده پست های برتر&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="366" y="243" width="74" height="36" as="geometry" />
         </mxCell>
+        <mxCell id="P2OjYQdWtaf4uAiAOgez-19" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;strokeColor=#23445D;dashed=1;dashPattern=1 1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="P2OjYQdWtaf4uAiAOgez-7" target="P2OjYQdWtaf4uAiAOgez-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="P2OjYQdWtaf4uAiAOgez-7" value="&lt;font face=&quot;Vazirmatn&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;گذاشتن کامنت برای یک پست&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="366" y="292" width="74" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="P2OjYQdWtaf4uAiAOgez-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#23445D;dashed=1;dashPattern=1 1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="P2OjYQdWtaf4uAiAOgez-8" target="P2OjYQdWtaf4uAiAOgez-16">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="P2OjYQdWtaf4uAiAOgez-8" value="&lt;font face=&quot;Vazirmatn&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;لایک کردن یک پست&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="366" y="341" width="74" height="36" as="geometry" />
@@ -89,7 +98,7 @@
         <mxCell id="P2OjYQdWtaf4uAiAOgez-15" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#23445D;endArrow=none;endFill=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="P2OjYQdWtaf4uAiAOgez-8" target="NMSrQERmVCEjVIg-8JzD-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="P2OjYQdWtaf4uAiAOgez-16" value="&lt;font face=&quot;Vazirmatn&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;صحت ورود&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="P2OjYQdWtaf4uAiAOgez-16" value="&lt;font face=&quot;Vazirmatn&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;احراز هویت&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="457" y="373" width="74" height="36" as="geometry" />
         </mxCell>
       </root>
