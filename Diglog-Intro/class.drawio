@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-20T09:59:18.289Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="hKBz83bW_IMOOdX-NOIf" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-20T10:00:41.938Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="r82uIcyYICCvORLI3eII" version="24.4.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2713" dy="1331" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1400" math="0" shadow="0">
+    <mxGraphModel dx="1110" dy="545" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -50,7 +50,7 @@
           <mxGeometry y="80" width="160" height="52" as="geometry" />
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-19" value="View" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="412" y="200" width="160" height="184" as="geometry" />
+          <mxGeometry x="412" y="200" width="160" height="129" as="geometry" />
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-20" value="&lt;u&gt;+ user: str&lt;/u&gt;&lt;div&gt;&lt;u&gt;+ post_id: pk&lt;/u&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-19" vertex="1">
           <mxGeometry y="26" width="160" height="50" as="geometry" />
@@ -58,8 +58,8 @@
         <mxCell id="O4sXFlbaif_imBeeRptx-21" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#457B9D;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-19" vertex="1">
           <mxGeometry y="76" width="160" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="O4sXFlbaif_imBeeRptx-22" value="- login(request)&lt;div&gt;- logout(request.user)&lt;/div&gt;&lt;div&gt;- register(request)&lt;/div&gt;&lt;div&gt;- save()&lt;/div&gt;&lt;div&gt;+ show_info(user)&lt;/div&gt;&lt;div&gt;- edit_info(request.user)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-19" vertex="1">
-          <mxGeometry y="84" width="160" height="100" as="geometry" />
+        <mxCell id="O4sXFlbaif_imBeeRptx-22" value="- total_view(post)&lt;div&gt;- view_detail(user, post)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-19" vertex="1">
+          <mxGeometry y="84" width="160" height="45" as="geometry" />
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-23" value="Comment" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="604" y="582" width="199" height="170" as="geometry" />
