@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-20T11:00:13.485Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="NRCEw_5zazV9pPox4IeK" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-20T11:01:47.748Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="8LWFL6O4CHOhetQmAR7E" version="24.4.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1000" dy="974" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -69,6 +69,12 @@
         </mxCell>
         <mxCell id="InkFZemtt1y-9OFiI00L-22" value="&lt;font data-font-src=&quot;https://fonts.googleapis.com/css?family=Vazirmatn&quot; face=&quot;Vazirmatn&quot;&gt;چک کردن اطلاعات / ذخیره کاربر&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="824" y="15" width="167" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="InkFZemtt1y-9OFiI00L-23" value="&lt;font data-font-src=&quot;https://fonts.googleapis.com/css?family=Vazirmatn&quot; face=&quot;Vazirmatn&quot;&gt;تایید ورود به سایت&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="456" y="80" width="107" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="InkFZemtt1y-9OFiI00L-24" value="&lt;font data-font-src=&quot;https://fonts.googleapis.com/css?family=Vazirmatn&quot; face=&quot;Vazirmatn&quot;&gt;نمایش پست در صفحه اصلی&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="410" y="107" width="153" height="27" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
