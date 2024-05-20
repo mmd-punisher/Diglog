@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-20T09:25:40.357Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="psi9uE9LBx9EpP5ncffv" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-20T09:37:20.582Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="jMi3JGFiI2GFDSMn8CbV" version="24.4.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1434" dy="696" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="610" dy="296" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -16,17 +16,17 @@
         <mxCell id="O4sXFlbaif_imBeeRptx-6" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="98" y="154" width="187" height="288" as="geometry" />
         </mxCell>
-        <mxCell id="O4sXFlbaif_imBeeRptx-7" value="+ first_name: str&lt;div&gt;+ last_name: str&lt;/div&gt;&lt;div&gt;&lt;u&gt;+ username: str&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ email: email field (str)&lt;/div&gt;&lt;div&gt;+ last_login: date time field&lt;/div&gt;&lt;div&gt;+ bio: str&lt;/div&gt;&lt;div&gt;+ profile_pic: image field&lt;/div&gt;&lt;div&gt;+ links: str&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-6" vertex="1">
+        <mxCell id="O4sXFlbaif_imBeeRptx-7" value="+ first_name: str&lt;div&gt;+ last_name: str&lt;/div&gt;&lt;div&gt;&lt;u&gt;+ username: str&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ email: email field (str)&lt;/div&gt;&lt;div&gt;+ last_login: date time field&lt;/div&gt;&lt;div&gt;+ join_date: date time field&lt;/div&gt;&lt;div&gt;+ is_staff: bool&lt;/div&gt;&lt;div&gt;+ is_active: bool&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-6" vertex="1">
           <mxGeometry y="26" width="187" height="136" as="geometry" />
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#457B9D;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-6" vertex="1">
           <mxGeometry y="162" width="187" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="O4sXFlbaif_imBeeRptx-9" value="- login(request)&lt;div&gt;- logout(request.user)&lt;/div&gt;&lt;div&gt;- register(request)&lt;/div&gt;&lt;div&gt;- save()&lt;/div&gt;&lt;div&gt;+ show_info(user)&lt;/div&gt;&lt;div&gt;- edit_info(request.user)&lt;/div&gt;&lt;div&gt;- email_exist(user.email)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-6" vertex="1">
+        <mxCell id="O4sXFlbaif_imBeeRptx-9" value="- login(request)&lt;div&gt;- logout(request.user)&lt;/div&gt;&lt;div&gt;- register(request)&lt;/div&gt;&lt;div&gt;- save()&lt;/div&gt;&lt;div&gt;+ show_info(user)&lt;/div&gt;&lt;div&gt;- edit_settings(request.user)&lt;/div&gt;&lt;div&gt;- email_exist(user.email)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-6" vertex="1">
           <mxGeometry y="170" width="187" height="118" as="geometry" />
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-10" value="Post" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="513" y="156.5" width="190" height="283" as="geometry" />
+          <mxGeometry x="513" y="156.5" width="190" height="262" as="geometry" />
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-11" value="+ title: str&lt;div&gt;&lt;u&gt;+ author: foreign key - str (&lt;font color=&quot;#770d0d&quot; style=&quot;--darkreader-inline-color: #ff8585;&quot; data-darkreader-inline-color=&quot;&quot;&gt;User&lt;/font&gt;)&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;+ slug: slug field (base on title)&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ body: str (RichTextField)&lt;/div&gt;&lt;div&gt;+ header_image: image field&lt;/div&gt;&lt;div&gt;+ pub_day: date time field&lt;/div&gt;&lt;div&gt;+ update_date: date time field&lt;/div&gt;&lt;div&gt;&lt;u&gt;+ category: str (&lt;font color=&quot;#870303&quot; style=&quot;--darkreader-inline-color: #ff7474;&quot; data-darkreader-inline-color=&quot;&quot;&gt;Category&lt;/font&gt;)&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ short_desc: str&lt;/div&gt;&lt;div&gt;&lt;u&gt;+ likes: ManyToManyField (&lt;font style=&quot;--darkreader-inline-color: #f58d8d;&quot; data-darkreader-inline-color=&quot;&quot; color=&quot;#711919&quot;&gt;User&lt;/font&gt;)&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-10" vertex="1">
           <mxGeometry y="26" width="190" height="171" as="geometry" />
@@ -34,8 +34,8 @@
         <mxCell id="O4sXFlbaif_imBeeRptx-12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#457B9D;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-10" vertex="1">
           <mxGeometry y="197" width="190" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="O4sXFlbaif_imBeeRptx-13" value="+ create_post(info)&lt;div&gt;+ edit()&lt;/div&gt;&lt;div&gt;+ delete()&lt;/div&gt;&lt;div&gt;- total_likes(post.likes)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-10" vertex="1">
-          <mxGeometry y="205" width="190" height="78" as="geometry" />
+        <mxCell id="O4sXFlbaif_imBeeRptx-13" value="+ create_post(info)&lt;div&gt;+ edit()&lt;/div&gt;&lt;div&gt;+ delete()&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-10" vertex="1">
+          <mxGeometry y="205" width="190" height="57" as="geometry" />
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-15" value="Category" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="123" y="527" width="160" height="113" as="geometry" />
@@ -50,7 +50,7 @@
           <mxGeometry y="61" width="160" height="52" as="geometry" />
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-19" value="View" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="539" y="534" width="160" height="184" as="geometry" />
+          <mxGeometry x="509" y="640" width="160" height="184" as="geometry" />
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-20" value="&lt;u&gt;+ user: str&lt;/u&gt;&lt;div&gt;&lt;u&gt;+ post_id: pk&lt;/u&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-19" vertex="1">
           <mxGeometry y="26" width="160" height="50" as="geometry" />
@@ -72,6 +72,30 @@
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-26" value="+ save(post, comment)&lt;div&gt;+ edit(post, comment)&lt;/div&gt;&lt;div&gt;+ delete(post, comment)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-23" vertex="1">
           <mxGeometry y="110" width="199" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jKLF3p9kJyowhTWAXONv-0" value="Like" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="492" y="477" width="160" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="jKLF3p9kJyowhTWAXONv-1" value="+ like: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" vertex="1" parent="jKLF3p9kJyowhTWAXONv-0">
+          <mxGeometry y="26" width="160" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="jKLF3p9kJyowhTWAXONv-2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#457B9D;labelBackgroundColor=none;fontColor=#1D3557;" vertex="1" parent="jKLF3p9kJyowhTWAXONv-0">
+          <mxGeometry y="53" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="jKLF3p9kJyowhTWAXONv-3" value="- total_likes(post.likes)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" vertex="1" parent="jKLF3p9kJyowhTWAXONv-0">
+          <mxGeometry y="61" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="jKLF3p9kJyowhTWAXONv-4" value="Profile" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="299" y="160" width="187" height="187" as="geometry" />
+        </mxCell>
+        <mxCell id="jKLF3p9kJyowhTWAXONv-5" value="+ bio: str&lt;div&gt;+ profile_img: image field&lt;/div&gt;&lt;div&gt;+ website: str&lt;/div&gt;&lt;div&gt;+ instagram_link: str&lt;/div&gt;&lt;div&gt;+ twitter_link: str&lt;/div&gt;&lt;div&gt;+ slug: slug field&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" vertex="1" parent="jKLF3p9kJyowhTWAXONv-4">
+          <mxGeometry y="26" width="187" height="103" as="geometry" />
+        </mxCell>
+        <mxCell id="jKLF3p9kJyowhTWAXONv-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#457B9D;labelBackgroundColor=none;fontColor=#1D3557;" vertex="1" parent="jKLF3p9kJyowhTWAXONv-4">
+          <mxGeometry y="129" width="187" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="jKLF3p9kJyowhTWAXONv-7" value="&lt;div&gt;- update_profile(request.user)&lt;/div&gt;&lt;div&gt;- edit_profile(requst.user)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" vertex="1" parent="jKLF3p9kJyowhTWAXONv-4">
+          <mxGeometry y="137" width="187" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
