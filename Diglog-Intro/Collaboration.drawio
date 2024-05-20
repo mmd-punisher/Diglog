@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-20T11:16:53.791Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="Bde8CbmROPkY3zZHPVst" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-20T11:17:31.960Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="d5PaAQEbrlyZmuMEviEL" version="24.4.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="722" dy="703" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1357" dy="703" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -30,7 +30,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="InkFZemtt1y-9OFiI00L-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;strokeColor=#182E3E;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="InkFZemtt1y-9OFiI00L-1" target="InkFZemtt1y-9OFiI00L-4">
+        <mxCell id="InkFZemtt1y-9OFiI00L-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeColor=#182E3E;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="InkFZemtt1y-9OFiI00L-1" target="InkFZemtt1y-9OFiI00L-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="InkFZemtt1y-9OFiI00L-1" value="&lt;font face=&quot;Vazirmatn&quot;&gt;وبسایت&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#56517E;strokeColor=#EEEEEE;fontColor=#FFFFFF;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
@@ -46,7 +46,7 @@
           <mxGeometry x="194" y="596" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="InkFZemtt1y-9OFiI00L-4" value="&lt;font face=&quot;Vazirmatn&quot;&gt;صفحه جزئیات پست&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#56517E;strokeColor=#EEEEEE;fontColor=#FFFFFF;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="599" y="596" width="120" height="60" as="geometry" />
+          <mxGeometry x="570" y="596" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="InkFZemtt1y-9OFiI00L-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;strokeColor=#182E3E;fontColor=default;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="InkFZemtt1y-9OFiI00L-5" target="InkFZemtt1y-9OFiI00L-2">
           <mxGeometry relative="1" as="geometry">
