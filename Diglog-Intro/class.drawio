@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-20T09:54:27.309Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="fdy8w3y8ppAbfU7pQ4aG" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-20T09:55:55.717Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="JMO_4UT8P4oA7cuplbP5" version="24.4.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1285" dy="631" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1400" math="0" shadow="0">
+    <mxGraphModel dx="977" dy="479" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1400" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -40,7 +40,7 @@
         <mxCell id="O4sXFlbaif_imBeeRptx-15" value="Category" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="955" y="522" width="160" height="132" as="geometry" />
         </mxCell>
-        <mxCell id="O4sXFlbaif_imBeeRptx-16" value="+ name: str&lt;div&gt;+ post: slug (title)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-15" vertex="1">
+        <mxCell id="O4sXFlbaif_imBeeRptx-16" value="+ name: str&lt;div&gt;+ &lt;u&gt;post: slug (title)&lt;/u&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-15" vertex="1">
           <mxGeometry y="26" width="160" height="46" as="geometry" />
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#457B9D;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-15" vertex="1">
@@ -64,7 +64,7 @@
         <mxCell id="O4sXFlbaif_imBeeRptx-23" value="Comment" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="604" y="582" width="199" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="O4sXFlbaif_imBeeRptx-24" value="+ author: Foreign key - str (User)&lt;div&gt;+ post: Foreign key - str (Post)&lt;/div&gt;&lt;div&gt;+ body: str&lt;/div&gt;&lt;div&gt;+ pub_date: date time field&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-23" vertex="1">
+        <mxCell id="O4sXFlbaif_imBeeRptx-24" value="&lt;u&gt;+ author: Foreign key - str (&lt;font style=&quot;--darkreader-inline-color: #ff7b7b;&quot; data-darkreader-inline-color=&quot;&quot; color=&quot;#7e0202&quot;&gt;User&lt;/font&gt;)&lt;/u&gt;&lt;div&gt;&lt;u&gt;+ post: Foreign key - str (&lt;font style=&quot;--darkreader-inline-color: #ff8181;&quot; data-darkreader-inline-color=&quot;&quot; color=&quot;#760404&quot;&gt;Post&lt;/font&gt;)&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ body: str&lt;/div&gt;&lt;div&gt;+ pub_date: date time field&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-23" vertex="1">
           <mxGeometry y="26" width="199" height="76" as="geometry" />
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#457B9D;labelBackgroundColor=none;fontColor=#1D3557;" parent="O4sXFlbaif_imBeeRptx-23" vertex="1">
@@ -140,6 +140,15 @@
         </mxCell>
         <mxCell id="jKLF3p9kJyowhTWAXONv-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.997;entryY=0.294;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=1.5;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="jKLF3p9kJyowhTWAXONv-1" target="O4sXFlbaif_imBeeRptx-11">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jKLF3p9kJyowhTWAXONv-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.512;entryY=1.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="O4sXFlbaif_imBeeRptx-24" target="O4sXFlbaif_imBeeRptx-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="538" y="646" />
+              <mxPoint x="538" y="474" />
+              <mxPoint x="240" y="474" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
