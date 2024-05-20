@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-20T08:22:29.092Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="rAg7UFy-Vx0H87WZtdXh" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-20T08:25:57.128Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="loL2hbafpTunaUS5rNIS" version="24.4.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="989" dy="480" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="696" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -60,6 +60,18 @@
         </mxCell>
         <mxCell id="O4sXFlbaif_imBeeRptx-22" value="- login(request)&lt;div&gt;- logout(request.user)&lt;/div&gt;&lt;div&gt;- register(request)&lt;/div&gt;&lt;div&gt;- save()&lt;/div&gt;&lt;div&gt;+ show_info(user)&lt;/div&gt;&lt;div&gt;- edit_info(request.user)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" vertex="1" parent="O4sXFlbaif_imBeeRptx-19">
           <mxGeometry y="84" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="O4sXFlbaif_imBeeRptx-23" value="Comment" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="264" y="688" width="199" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="O4sXFlbaif_imBeeRptx-24" value="+ author: Foreign key - str (User)&lt;div&gt;+ post: Foreign key - str (Post)&lt;/div&gt;&lt;div&gt;+ body: str&lt;/div&gt;&lt;div&gt;+ pub_date: date time field&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" vertex="1" parent="O4sXFlbaif_imBeeRptx-23">
+          <mxGeometry y="26" width="199" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="O4sXFlbaif_imBeeRptx-25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#457B9D;labelBackgroundColor=none;fontColor=#1D3557;" vertex="1" parent="O4sXFlbaif_imBeeRptx-23">
+          <mxGeometry y="102" width="199" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="O4sXFlbaif_imBeeRptx-26" value="+ save(post, comment)&lt;div&gt;+ edit(post, comment)&lt;/div&gt;&lt;div&gt;+ delete(post, comment)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#1D3557;" vertex="1" parent="O4sXFlbaif_imBeeRptx-23">
+          <mxGeometry y="110" width="199" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
