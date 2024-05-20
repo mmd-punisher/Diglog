@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-20T11:01:47.748Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="8LWFL6O4CHOhetQmAR7E" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-20T11:04:30.931Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="m8n8KNXFyy8T7vWEp8Jd" version="24.4.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1000" dy="974" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -23,6 +23,16 @@
         <mxCell id="InkFZemtt1y-9OFiI00L-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="InkFZemtt1y-9OFiI00L-1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="316.989923650568" y="154.45454545454527" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="InkFZemtt1y-9OFiI00L-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="InkFZemtt1y-9OFiI00L-1" target="InkFZemtt1y-9OFiI00L-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="576" y="435" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="629" y="424" />
+              <mxPoint x="988" y="424" />
+              <mxPoint x="988" y="470" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="InkFZemtt1y-9OFiI00L-1" value="&lt;font face=&quot;Vazirmatn&quot;&gt;وبسایت&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
@@ -55,6 +65,9 @@
         <mxCell id="InkFZemtt1y-9OFiI00L-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="InkFZemtt1y-9OFiI00L-11" target="InkFZemtt1y-9OFiI00L-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="InkFZemtt1y-9OFiI00L-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="InkFZemtt1y-9OFiI00L-11" target="InkFZemtt1y-9OFiI00L-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="InkFZemtt1y-9OFiI00L-11" value="&lt;font data-font-src=&quot;https://fonts.googleapis.com/css?family=Vazirmatn&quot; face=&quot;Vazirmatn&quot;&gt;کاربر&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="962" y="299" width="120" height="60" as="geometry" />
         </mxCell>
@@ -75,6 +88,15 @@
         </mxCell>
         <mxCell id="InkFZemtt1y-9OFiI00L-24" value="&lt;font data-font-src=&quot;https://fonts.googleapis.com/css?family=Vazirmatn&quot; face=&quot;Vazirmatn&quot;&gt;نمایش پست در صفحه اصلی&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="410" y="107" width="153" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="InkFZemtt1y-9OFiI00L-26" value="&lt;font face=&quot;Vazirmatn&quot;&gt;کامل کردن پروفایل&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="453" y="299" width="105" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="InkFZemtt1y-9OFiI00L-27" value="&lt;font face=&quot;Vazirmatn&quot;&gt;ذخیره اطلاعات&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="135" y="389" width="87" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="InkFZemtt1y-9OFiI00L-29" value="&lt;font face=&quot;Vazirmatn&quot;&gt;ساخت پست&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="532" y="216" width="78" height="27" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
