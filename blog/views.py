@@ -11,7 +11,7 @@ from blog.forms import PostForm, EditForm, CommentForm
 from blog.models import Post, Category, Comment
 from hitcount.views import HitCountDetailView
 
-
+2
 class HomeView(ListView):
     model = Post
     template_name = 'blog/home.html'
@@ -119,6 +119,7 @@ class PostCreateView(CreateView):
     model = Post
     form_class = PostForm
     template_name = 'blog/create_post.html'
+    # todo: SSRF for ckeditor (localhost image)
 
 
 class PostUpdateView(UpdateView):
